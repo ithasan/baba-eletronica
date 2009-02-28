@@ -20,7 +20,6 @@ const rom unsigned char config4L = 0b10000001;      // DEBUG disabled,
                                                     // XINST disabled
                                                     // LVP disabled
                                                     // STVREN enabled
-
 void sleep(void);
 void InitializePort(void);
 
