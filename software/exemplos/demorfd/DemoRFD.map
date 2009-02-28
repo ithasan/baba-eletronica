@@ -1,0 +1,1998 @@
+MPLINK 4.22, Linker
+Linker Map File - Created Wed Feb 25 19:02:37 2009
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+               _entry_scn       code   0x000000    program   0x000006
+               highVector       code   0x000008    program   0x000006
+               lowhVector       code   0x000018    program   0x000006
+               macaddress    romdata   0x00002a    program   0x000008
+                   .cinit    romdata   0x000032    program   0x00000e
+    .code_zMAC_MRF24J40.o       code   0x000040    program   0x0021b8
+             .code_zAPS.o       code   0x0021f8    program   0x001c66
+             .code_zNWK.o       code   0x003e5e    program   0x0014a4
+             .code_zZDO.o       code   0x005302    program   0x000d84
+              .code_RFD.o       code   0x006086    program   0x000b5e
+    .code_zPHY_MRF24J40.o       code   0x006be4    program   0x0008ee
+             .stringtable    romdata   0x0074d2    program   0x0004f1
+ .idata_zPHY_MRF24J40.o_i    romdata   0x0079c3    program   0x000000
+ .romdata_zPHY_MRF24J40.o    romdata   0x0079c3    program   0x000000
+ .idata_zMAC_MRF24J40.o_i    romdata   0x0079c3    program   0x000000
+   .romdata_ZigbeeTasks.o    romdata   0x0079c3    program   0x000000
+   .idata_ZigbeeTasks.o_i    romdata   0x0079c3    program   0x000000
+          .romdata_zAPS.o    romdata   0x0079c3    program   0x000000
+          .romdata_zZDO.o    romdata   0x0079c3    program   0x000000
+          .idata_zZDO.o_i    romdata   0x0079c3    program   0x000000
+       .idata_Console.o_i    romdata   0x0079c3    program   0x000000
+         .idata_c018i.o_i    romdata   0x0079c3    program   0x000000
+         .romdata_c018i.o    romdata   0x0079c3    program   0x000000
+           .idata_RFD.o_i    romdata   0x0079c3    program   0x000000
+           .romdata_RFD.o    romdata   0x0079c3    program   0x000000
+       .idata_sralloc.o_i    romdata   0x0079c3    program   0x000000
+      .code_ZigbeeTasks.o       code   0x0079c4    program   0x0003a8
+         .code_myZigBee.o       code   0x0079c4    program   0x000000
+          .code_sralloc.o       code   0x007d6c    program   0x00037a
+             .code_zNVM.o       code   0x0080e6    program   0x000366
+                     PROG       code   0x00844c    program   0x0001fe
+          .code_Console.o       code   0x00864a    program   0x000192
+                   STRING       code   0x0087dc    program   0x000160
+          .romdata_zNVM.o    romdata   0x00893c    program   0x00010d
+        .romdata___init.o    romdata   0x008a49    program   0x000000
+        .idata___init.o_i    romdata   0x008a49    program   0x000000
+.romdata_zSecurity_MRF24J40.o    romdata   0x008a49    program   0x000000
+.idata_zSecurity_MRF24J40.o_i    romdata   0x008a49    program   0x000000
+          .idata_MSPI.o_i    romdata   0x008a49    program   0x000000
+          .romdata_zNWK.o    romdata   0x008a49    program   0x000000
+          .idata_zNWK.o_i    romdata   0x008a49    program   0x000000
+       .romdata_sralloc.o    romdata   0x008a49    program   0x000000
+    .idata_SymbolTime.o_i    romdata   0x008a49    program   0x000000
+    .romdata_SymbolTime.o    romdata   0x008a49    program   0x000000
+          .idata_zAPS.o_i    romdata   0x008a49    program   0x000000
+          .romdata_MSPI.o    romdata   0x008a49    program   0x000000
+      .idata_myZigBee.o_i    romdata   0x008a49    program   0x000000
+.code_zSecurity_MRF24J40.o       code   0x008a4a    program   0x000000
+            .code_c018i.o       code   0x008a4a    program   0x000000
+               _cinit_scn       code   0x008a4a    program   0x00009e
+       .code_SymbolTime.o       code   0x008ae8    program   0x00009a
+      .romdata_myZigBee.o    romdata   0x008b82    program   0x000040
+ .romdata_zMAC_MRF24J40.o    romdata   0x008bc2    program   0x00003c
+             .code_MSPI.o       code   0x008bfe    program   0x00002c
+             _startup_scn       code   0x008c2a    program   0x00001c
+       .romdata_Console.o    romdata   0x008c46    program   0x000010
+                    .code       code   0x008c56    program   0x00000e
+           .code___init.o       code   0x008c64    program   0x000002
+          .idata_zNVM.o_i    romdata   0x008c66    program   0x000002
+                 CONFIG1H    romdata   0x300001    program   0x000001
+                 CONFIG2L    romdata   0x300002    program   0x000001
+                 CONFIG2H    romdata   0x300003    program   0x000001
+                 CONFIG3H    romdata   0x300005    program   0x000001
+                 CONFIG4L    romdata   0x300006    program   0x000001
+                MATH_DATA      udata   0x000000       data   0x000014
+                 .tmpdata      udata   0x000014       data   0x00000c
+              HighISR_tmp      udata   0x000020       data   0x000004
+   .udata_zMAC_MRF24J40.o      udata   0x000080       data   0x000053
+            .udata_zNVM.o      udata   0x0000d3       data   0x000021
+           .udata_c018i.o      udata   0x0000f4       data   0x00000a
+            .udata_zZDO.o      udata   0x0000fe       data   0x000002
+            MultiBankHeap      udata   0x000100       data   0x000800
+                   .stack      udata   0x000900       data   0x000100
+                RX_BUFFER      udata   0x000a00       data   0x000100
+     .udata_ZigbeeTasks.o      udata   0x000e00       data   0x0000aa
+            .udata_zAPS.o      udata   0x000eaa       data   0x00001f
+            .udata_zNWK.o      udata   0x000ec9       data   0x00001e
+             .udata_RFD.o      udata   0x000ee7       data   0x000009
+      .udata_SymbolTime.o      udata   0x000ef0       data   0x000002
+            .idata_zNVM.o      idata   0x000ef2       data   0x000002
+   .udata_zPHY_MRF24J40.o      udata   0x000f00       data   0x00000f
+           .idata_c018i.o      idata   0x000f0f       data   0x000000
+          .idata___init.o      idata   0x000f0f       data   0x000000
+          .udata___init.o      udata   0x000f0f       data   0x000000
+.idata_zSecurity_MRF24J40.o      idata   0x000f0f       data   0x000000
+.udata_zSecurity_MRF24J40.o      udata   0x000f0f       data   0x000000
+   .idata_zPHY_MRF24J40.o      idata   0x000f0f       data   0x000000
+            .idata_zNWK.o      idata   0x000f0f       data   0x000000
+             .idata_RFD.o      idata   0x000f0f       data   0x000000
+   .idata_zMAC_MRF24J40.o      idata   0x000f0f       data   0x000000
+        .udata_myZigBee.o      udata   0x000f0f       data   0x000000
+     .idata_ZigbeeTasks.o      idata   0x000f0f       data   0x000000
+            .idata_zAPS.o      idata   0x000f0f       data   0x000000
+      .idata_SymbolTime.o      idata   0x000f0f       data   0x000000
+            .idata_zZDO.o      idata   0x000f0f       data   0x000000
+        .idata_myZigBee.o      idata   0x000f0f       data   0x000000
+            .idata_MSPI.o      idata   0x000f0f       data   0x000000
+            .udata_MSPI.o      udata   0x000f0f       data   0x000000
+         .idata_Console.o      idata   0x000f0f       data   0x000000
+         .udata_Console.o      udata   0x000f0f       data   0x000000
+         .udata_sralloc.o      udata   0x000f0f       data   0x000000
+         .idata_sralloc.o      idata   0x000f0f       data   0x000000
+            SFR_UNBANKED0      udata   0x000f80       data   0x000080
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000005      
+                            0x000008    0x00000d      
+                            0x000018    0x00001d      
+                            0x00002a    0x0079c2      
+                            0x0079c4    0x008a48      
+                            0x008a4a    0x008c67      
+                            0x300001    0x300003      
+                            0x300005    0x300006      
+            35923 out of 66584 program addresses used, program memory utilization is 53%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+  APSClearAPSAddressTable   0x003a98    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+       APSFromLongToShort   0x003e06    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+       APSFromShortToLong   0x003d64    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+                   APSGet   0x003b08    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+    APSHasBackgroundTasks   0x0021f8    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+                  APSInit   0x002204    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+        APSSaveAPSAddress   0x003bba    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+                 APSTasks   0x002334    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+       CanAddNeighborNode   0x004dc2    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+           CharacterArray   0x008c46    program     extern C:\MPZBee\Common\Console.c
+                 ClearNVM   0x00838c    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+Config_NWK_Mode_and_Params   0x008bb8    program     extern C:\MpZBee\DemoRFD\myZigBee.c
+   Config_Node_Descriptor   0x008b82    program     extern C:\MpZBee\DemoRFD\myZigBee.c
+  Config_Power_Descriptor   0x008b8a    program     extern C:\MpZBee\DemoRFD\myZigBee.c
+Config_Simple_Descriptors   0x008b8c    program     extern C:\MpZBee\DemoRFD\myZigBee.c
+               ConsoleGet   0x00876e    program     extern C:\MPZBee\Common\Console.c
+         ConsoleGetString   0x0086a0    program     extern C:\MPZBee\Common\Console.c
+              ConsoleInit   0x00864a    program     extern C:\MPZBee\Common\Console.c
+               ConsolePut   0x008718    program     extern C:\MPZBee\Common\Console.c
+      ConsolePutROMString   0x008662    program     extern C:\MPZBee\Common\Console.c
+         ConsolePutString   0x008732    program     extern C:\MPZBee\Common\Console.c
+      DoneReceivingPacket   0x007442    program     static                          
+                 FLO3232S   0x008450    program     extern C:\MCC18\src\traditional\math\cast32FP.asm
+                 FLO3232U   0x00844c    program     extern C:\MCC18\src\traditional\math\cast32FP.asm
+   FinishAddressResponses   0x005e62    program     extern C:\MPZBee\ZigbeeStack\zZDO.C
+             HardwareInit   0x006b92    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                  HighISR   0x0070c4    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+               HighVector   0x000008    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+          InitSymbolTimer   0x008ae8    program     extern C:\MPZBee\ZigbeeStack\SymbolTime.c
+        IsThisMyShortAddr   0x005fd2    program     extern C:\MPZBee\ZigbeeStack\zZDO.C
+         LookupAPSAddress   0x003b24    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+     LookupAPSLongAddress   0x003cd8    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+                LowVector   0x000018    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+               MACDisable   0x00007a    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+             MACDiscardRx   0x000062    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                MACEnable   0x000086    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                   MACGet   0x00004c    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+    MACHasBackgroundTasks   0x000040    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                  MACInit   0x00015e    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                 MACTasks   0x0001bc    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+     MLME_SET_macPANId_hw   0x0021b4    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+MLME_SET_macShortAddress_hw   0x0021d6    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+         NLME_GET_nwkBCSN   0x004e5a    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                  NVMInit   0x0080e6    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+                 NVMWrite   0x0080e8    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+    NWKClearNeighborTable   0x004e68    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                   NWKGet   0x004efa    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+    NWKHasBackgroundTasks   0x003e5e    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                  NWKInit   0x003e6a    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+  NWKLookupNodeByLongAddr   0x004f16    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+NWKLookupNodeByShortAddrVal   0x004fb0    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                 NWKTasks   0x003ed4    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+   NWKThisIsMyLongAddress   0x005038    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+     NWKTidyNeighborTable   0x0050b8    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                   PHYGet   0x006be4    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+        PHYGetLongRAMAddr   0x007008    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+       PHYGetShortRAMAddr   0x006fb2    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+    PHYHasBackgroundTasks   0x006c20    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                  PHYInit   0x006c26    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+        PHYSetLongRAMAddr   0x006ecc    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+        PHYSetOutputPower   0x00709e    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+       PHYSetShortRAMAddr   0x006f5c    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                 PHYTasks   0x006dde    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+   PrepareMessageResponse   0x006038    program     extern C:\MPZBee\ZigbeeStack\zZDO.C
+Prepare_MCPS_DATA_request   0x005198    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                PrintChar   0x00877a    program     extern C:\MPZBee\Common\Console.c
+ RemoveNeighborTableEntry   0x00522e    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                   SPIGet   0x008c20    program     extern C:\MPZBee\Common\MSPI.c  
+                   SPIPut   0x008bfe    program     extern C:\MPZBee\Common\MSPI.c  
+             SRAMInitHeap   0x007f24    program     extern C:\MPZBee\Common\sralloc.c
+                SRAMalloc   0x007d6c    program     extern C:\MPZBee\Common\sralloc.c
+                 SRAMfree   0x007f00    program     extern C:\MPZBee\Common\sralloc.c
+        SubmitJoinRequest   0x006188    program     static                          
+                  TAGTB32   0x008482    program     extern C:\MCC18\src\traditional\math\gtFP.asm
+                  TickGet   0x008afc    program     extern C:\MPZBee\ZigbeeStack\SymbolTime.c
+     UserInterruptHandler   0x006bc6    program     extern C:\MpZBee\DemoRFD\RFD.c  
+VariableAndTableInitialization   0x00529a    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+    ZDOHasBackgroundTasks   0x005302    program     extern C:\MPZBee\ZigbeeStack\zZDO.C
+                  ZDOInit   0x00530e    program     extern C:\MPZBee\ZigbeeStack\zZDO.C
+                 ZDOTasks   0x005314    program     extern C:\MPZBee\ZigbeeStack\zZDO.C
+               ZigBeeInit   0x0079c4    program     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+              ZigBeeTasks   0x0079fa    program     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+              _2jContinue   0x008928    program     static C:\MCC18\src\traditional\stdclib\memset.asm
+              _3jContinue   0x008858    program     static C:\MCC18\src\traditional\stdclib\mcmpp2r.asm
+              _3jContinue   0x0088f4    program     static C:\MCC18\src\traditional\stdclib\mcpyp2r.asm
+                   _3jEnd   0x008932    program     static C:\MCC18\src\traditional\stdclib\memset.asm
+              _4jContinue   0x008808    program     static C:\MCC18\src\traditional\stdclib\memcmp.asm
+              _4jContinue   0x0088a0    program     static C:\MCC18\src\traditional\stdclib\memcpy.asm
+                   _4jEnd   0x0088fe    program     static C:\MCC18\src\traditional\stdclib\mcpyp2r.asm
+                   _4jEnd   0x008862    program     static C:\MCC18\src\traditional\stdclib\mcmpp2r.asm
+                   _5jEnd   0x0088aa    program     static C:\MCC18\src\traditional\stdclib\memcpy.asm
+                   _5jEnd   0x008812    program     static C:\MCC18\src\traditional\stdclib\memcmp.asm
+               _SRAMmerge   0x007fca    program     extern C:\MPZBee\Common\sralloc.c
+              __FpCompare   0x008494    program     extern C:\MCC18\src\traditional\math\compFP.asm
+                 __FpExit   0x00854a    program     extern C:\MCC18\src\traditional\math\packFP.asm
+                 __FpPack   0x008576    program     extern C:\MCC18\src\traditional\math\packFP.asm
+            __FpReturnNaN   0x00853e    program     extern C:\MCC18\src\traditional\math\packFP.asm
+         __FpReturnNegInf   0x008550    program     extern C:\MCC18\src\traditional\math\packFP.asm
+        __FpReturnNegZero   0x008568    program     extern C:\MCC18\src\traditional\math\packFP.asm
+         __FpReturnPosInf   0x008556    program     extern C:\MCC18\src\traditional\math\packFP.asm
+        __FpReturnPosZero   0x008570    program     extern C:\MCC18\src\traditional\math\packFP.asm
+        __FpReturnSignInf   0x00854c    program     extern C:\MCC18\src\traditional\math\packFP.asm
+       __FpReturnSignZero   0x008564    program     extern C:\MCC18\src\traditional\math\packFP.asm
+              __FpReturnW   0x0085ce    program     extern C:\MCC18\src\traditional\math\packFP.asm
+              __FpUnPackA   0x0085ee    program     extern C:\MCC18\src\traditional\math\UnpackFP.asm
+              __FpUnPackB   0x00861e    program     extern C:\MCC18\src\traditional\math\UnpackFP.asm
+       ___case_0_lbl00027   0x0063d2    program     static                          
+       ___case_0_lbl00032   0x00642e    program     static                          
+       ___case_0_lbl00042   0x006530    program     static                          
+       ___case_0_lbl00059   0x0066da    program     static                          
+       ___case_0_lbl00095   0x006814    program     static                          
+     ___case_100_lbl00073   0x007ca6    program     static                          
+     ___case_101_lbl00086   0x007cb6    program     static                          
+     ___case_102_lbl00072   0x007ca6    program     static                          
+     ___case_103_lbl00085   0x007cb6    program     static                          
+     ___case_104_lbl00071   0x007ca6    program     static                          
+     ___case_105_lbl00084   0x007cb6    program     static                          
+     ___case_106_lbl00070   0x007ca6    program     static                          
+     ___case_107_lbl00083   0x007cb6    program     static                          
+      ___case_10_lbl00010   0x007c76    program     static                          
+      ___case_11_lbl00032   0x007c86    program     static                          
+     ___case_128_lbl00040   0x0064b6    program     static                          
+      ___case_12_lbl00012   0x007c76    program     static                          
+     ___case_132_lbl00043   0x006554    program     static                          
+     ___case_133_lbl00044   0x006566    program     static                          
+     ___case_134_lbl00045   0x006578    program     static                          
+      ___case_13_lbl00031   0x007c86    program     static                          
+     ___case_160_lbl00047   0x00651a    program     static                          
+      ___case_16_lbl00030   0x007c86    program     static                          
+      ___case_17_lbl00069   0x007c96    program     static                          
+      ___case_18_lbl00068   0x007c96    program     static                          
+     ___case_193_lbl00029   0x0063f6    program     static                          
+     ___case_198_lbl00028   0x0063e4    program     static                          
+      ___case_19_lbl00029   0x007c86    program     static                          
+       ___case_1_lbl00015   0x007c76    program     static                          
+      ___case_20_lbl00067   0x007c96    program     static                          
+      ___case_21_lbl00028   0x007c86    program     static                          
+      ___case_22_lbl00066   0x007c96    program     static                          
+      ___case_23_lbl00027   0x007c86    program     static                          
+     ___case_240_lbl00061   0x006726    program     static                          
+      ___case_24_lbl00065   0x007c96    program     static                          
+     ___case_255_lbl00060   0x006700    program     static                          
+      ___case_25_lbl00026   0x007c86    program     static                          
+      ___case_26_lbl00064   0x007c96    program     static                          
+      ___case_27_lbl00063   0x007c96    program     static                          
+      ___case_28_lbl00062   0x007c96    program     static                          
+      ___case_29_lbl00025   0x007c86    program     static                          
+       ___case_2_lbl00036   0x007c86    program     static                          
+      ___case_30_lbl00061   0x007c96    program     static                          
+      ___case_31_lbl00024   0x007c86    program     static                          
+      ___case_32_lbl00060   0x007c96    program     static                          
+      ___case_33_lbl00059   0x007c96    program     static                          
+      ___case_34_lbl00058   0x007c96    program     static                          
+      ___case_35_lbl00023   0x007c86    program     static                          
+      ___case_36_lbl00022   0x007c86    program     static                          
+      ___case_37_lbl00057   0x007c96    program     static                          
+      ___case_38_lbl00021   0x007c86    program     static                          
+      ___case_39_lbl00056   0x007c96    program     static                          
+       ___case_3_lbl00037   0x007c86    program     static                          
+      ___case_40_lbl00020   0x007c86    program     static                          
+      ___case_41_lbl00055   0x007c96    program     static                          
+      ___case_42_lbl00054   0x007c96    program     static                          
+      ___case_43_lbl00019   0x007c86    program     static                          
+      ___case_44_lbl00053   0x007c96    program     static                          
+      ___case_45_lbl00018   0x007c86    program     static                          
+      ___case_46_lbl00052   0x007c96    program     static                          
+      ___case_47_lbl00017   0x007c86    program     static                          
+      ___case_48_lbl00051   0x007c96    program     static                          
+      ___case_49_lbl00016   0x007c86    program     static                          
+       ___case_4_lbl00014   0x007c76    program     static                          
+      ___case_50_lbl00050   0x007c96    program     static                          
+      ___case_51_lbl00049   0x007c96    program     static                          
+      ___case_52_lbl00082   0x007ca6    program     static                          
+      ___case_53_lbl00081   0x007ca6    program     static                          
+      ___case_54_lbl00004   0x006156    program     static                          
+      ___case_54_lbl00109   0x007cc6    program     static                          
+      ___case_55_lbl00108   0x007cc6    program     static                          
+      ___case_56_lbl00107   0x007cc6    program     static                          
+      ___case_57_lbl00106   0x007cc6    program     static                          
+      ___case_58_lbl00009   0x006208    program     static                          
+      ___case_58_lbl00105   0x007cc6    program     static                          
+      ___case_59_lbl00104   0x007cc6    program     static                          
+       ___case_5_lbl00033   0x007c86    program     static                          
+      ___case_60_lbl00103   0x007cc6    program     static                          
+      ___case_61_lbl00025   0x0063aa    program     static                          
+      ___case_61_lbl00102   0x007cc6    program     static                          
+      ___case_62_lbl00030   0x0063c0    program     static                          
+      ___case_62_lbl00101   0x007cc6    program     static                          
+      ___case_63_lbl00100   0x007cc6    program     static                          
+      ___case_64_lbl00099   0x007cc6    program     static                          
+      ___case_65_lbl00048   0x007c96    program     static                          
+      ___case_66_lbl00047   0x007c96    program     static                          
+      ___case_67_lbl00046   0x007c96    program     static                          
+      ___case_68_lbl00045   0x007c96    program     static                          
+      ___case_69_lbl00044   0x007c96    program     static                          
+       ___case_6_lbl00013   0x007c76    program     static                          
+      ___case_70_lbl00043   0x007c96    program     static                          
+      ___case_71_lbl00042   0x007c96    program     static                          
+      ___case_72_lbl00041   0x007c96    program     static                          
+      ___case_73_lbl00040   0x007c96    program     static                          
+      ___case_74_lbl00039   0x007c96    program     static                          
+      ___case_75_lbl00038   0x007c96    program     static                          
+      ___case_76_lbl00098   0x007cc6    program     static                          
+      ___case_77_lbl00024   0x00634e    program     static                          
+      ___case_77_lbl00097   0x007cc6    program     static                          
+      ___case_78_lbl00096   0x007cc6    program     static                          
+      ___case_79_lbl00080   0x007ca6    program     static                          
+       ___case_7_lbl00035   0x007c86    program     static                          
+      ___case_80_lbl00074   0x0067cc    program     static                          
+      ___case_80_lbl00110   0x007cc6    program     static                          
+      ___case_81_lbl00071   0x00640e    program     static                          
+      ___case_81_lbl00095   0x007cc6    program     static                          
+      ___case_82_lbl00079   0x007ca6    program     static                          
+      ___case_85_lbl00078   0x007ca6    program     static                          
+      ___case_86_lbl00094   0x007cc6    program     static                          
+      ___case_89_lbl00093   0x007cc6    program     static                          
+       ___case_8_lbl00011   0x007c76    program     static                          
+       ___case_8_lbl00069   0x0065c8    program     static                          
+      ___case_90_lbl00092   0x007cb6    program     static                          
+      ___case_91_lbl00091   0x007cb6    program     static                          
+      ___case_92_lbl00090   0x007cb6    program     static                          
+      ___case_93_lbl00089   0x007cb6    program     static                          
+      ___case_94_lbl00077   0x007ca6    program     static                          
+      ___case_95_lbl00076   0x007ca6    program     static                          
+      ___case_96_lbl00087   0x007cb6    program     static                          
+      ___case_97_lbl00075   0x007ca6    program     static                          
+      ___case_98_lbl00074   0x007ca6    program     static                          
+      ___case_99_lbl00088   0x007cb6    program     static                          
+       ___case_9_lbl00034   0x007c86    program     static                          
+      ___default_lbl00046   0x00658a    program     static                          
+      ___default_lbl00048   0x0065a2    program     static                          
+      ___default_lbl00062   0x00674c    program     static                          
+      ___default_lbl00070   0x0067c4    program     static                          
+      ___default_lbl00096   0x006b4a    program     static                          
+           ___do_lbl00002   0x007d12    program     static                          
+           ___do_lbl00003   0x007d1a    program     static                          
+           ___do_lbl00010   0x006dcc    program     static                          
+           ___do_lbl00011   0x006dd4    program     static                          
+           ___do_lbl00012   0x006dbc    program     static                          
+           ___do_lbl00117   0x007a12    program     static                          
+         ___else_lbl00006   0x006178    program     static                          
+         ___else_lbl00008   0x0061ea    program     static                          
+         ___else_lbl00013   0x0062a4    program     static                          
+         ___else_lbl00017   0x0062fa    program     static                          
+         ___else_lbl00019   0x0062b6    program     static                          
+         ___else_lbl00021   0x006264    program     static                          
+         ___else_lbl00023   0x006394    program     static                          
+         ___else_lbl00035   0x007162    program     static                          
+         ___else_lbl00041   0x0071c8    program     static                          
+         ___else_lbl00047   0x007242    program     static                          
+         ___else_lbl00052   0x007310    program     static                          
+         ___else_lbl00059   0x00737a    program     static                          
+         ___else_lbl00062   0x0073f8    program     static                          
+         ___else_lbl00064   0x00742e    program     static                          
+         ___else_lbl00065   0x0067b8    program     static                          
+         ___else_lbl00066   0x007438    program     static                          
+         ___else_lbl00073   0x0067fe    program     static                          
+         ___else_lbl00076   0x006868    program     static                          
+         ___else_lbl00081   0x006976    program     static                          
+         ___else_lbl00091   0x006af4    program     static                          
+         ___else_lbl00094   0x006892    program     static                          
+         ___else_lbl00116   0x007d08    program     static                          
+         ___else_lbl00123   0x007d5c    program     static                          
+          ___for_lbl00004   0x006c56    program     static                          
+          ___for_lbl00005   0x006c5a    program     static                          
+          ___for_lbl00006   0x006c40    program     static                          
+          ___for_lbl00007   0x006c74    program     static                          
+          ___for_lbl00008   0x006c78    program     static                          
+          ___for_lbl00009   0x006c5e    program     static                          
+          ___for_lbl00019   0x00842c    program     static                          
+          ___for_lbl00020   0x008438    program     static                          
+          ___for_lbl00023   0x0083a2    program     static                          
+          ___for_lbl00033   0x0065c0    program     static                          
+          ___for_lbl00034   0x0065c6    program     static                          
+          ___for_lbl00036   0x0064ea    program     static                          
+          ___for_lbl00037   0x0064f0    program     static                          
+          ___for_lbl00038   0x0064d2    program     static                          
+          ___for_lbl00049   0x0065ba    program     static                          
+          ___for_lbl00050   0x0065c0    program     static                          
+          ___for_lbl00051   0x0065a4    program     static                          
+          ___for_lbl00052   0x006472    program     static                          
+          ___for_lbl00054   0x0067bc    program     static                          
+          ___for_lbl00055   0x0067c2    program     static                          
+          ___for_lbl00067   0x0065e2    program     static                          
+           ___if_lbl00004   0x008156    program     static                          
+           ___if_lbl00004   0x007a28    program     static                          
+           ___if_lbl00005   0x007a3c    program     static                          
+           ___if_lbl00005   0x0061e8    program     static                          
+           ___if_lbl00006   0x007a50    program     static                          
+           ___if_lbl00007   0x0081d6    program     static                          
+           ___if_lbl00007   0x006204    program     static                          
+           ___if_lbl00007   0x007a64    program     static                          
+           ___if_lbl00008   0x008210    program     static                          
+           ___if_lbl00008   0x007a78    program     static                          
+           ___if_lbl00012   0x0062b4    program     static                          
+           ___if_lbl00014   0x0082cc    program     static                          
+           ___if_lbl00016   0x00634a    program     static                          
+           ___if_lbl00017   0x008350    program     static                          
+           ___if_lbl00018   0x00634a    program     static                          
+           ___if_lbl00020   0x00634a    program     static                          
+           ___if_lbl00022   0x0063a4    program     static                          
+           ___if_lbl00033   0x00716c    program     static                          
+           ___if_lbl00034   0x00716c    program     static                          
+           ___if_lbl00036   0x00716c    program     static                          
+           ___if_lbl00039   0x0071a8    program     static                          
+           ___if_lbl00039   0x006518    program     static                          
+           ___if_lbl00040   0x0071cc    program     static                          
+           ___if_lbl00042   0x0071cc    program     static                          
+           ___if_lbl00043   0x0071d0    program     static                          
+           ___if_lbl00044   0x0071d4    program     static                          
+           ___if_lbl00045   0x00721e    program     static                          
+           ___if_lbl00046   0x007268    program     static                          
+           ___if_lbl00048   0x0072ba    program     static                          
+           ___if_lbl00051   0x007348    program     static                          
+           ___if_lbl00053   0x0065c6    program     static                          
+           ___if_lbl00053   0x007378    program     static                          
+           ___if_lbl00055   0x0073c2    program     static                          
+           ___if_lbl00056   0x0073ca    program     static                          
+           ___if_lbl00057   0x0073ca    program     static                          
+           ___if_lbl00058   0x0073ca    program     static                          
+           ___if_lbl00060   0x0073e8    program     static                          
+           ___if_lbl00061   0x00740c    program     static                          
+           ___if_lbl00063   0x00677e    program     static                          
+           ___if_lbl00063   0x007436    program     static                          
+           ___if_lbl00064   0x0067bc    program     static                          
+           ___if_lbl00065   0x007442    program     static                          
+           ___if_lbl00066   0x0067bc    program     static                          
+           ___if_lbl00067   0x007444    program     static                          
+           ___if_lbl00068   0x007452    program     static                          
+           ___if_lbl00068   0x0067c2    program     static                          
+           ___if_lbl00069   0x007452    program     static                          
+           ___if_lbl00070   0x00746a    program     static                          
+           ___if_lbl00071   0x00746a    program     static                          
+           ___if_lbl00072   0x00746a    program     static                          
+           ___if_lbl00072   0x00680e    program     static                          
+           ___if_lbl00075   0x006890    program     static                          
+           ___if_lbl00077   0x006890    program     static                          
+           ___if_lbl00079   0x006abe    program     static                          
+           ___if_lbl00080   0x006abe    program     static                          
+           ___if_lbl00082   0x006ac0    program     static                          
+           ___if_lbl00083   0x006af2    program     static                          
+           ___if_lbl00084   0x006af2    program     static                          
+           ___if_lbl00088   0x006b48    program     static                          
+           ___if_lbl00089   0x006b48    program     static                          
+           ___if_lbl00090   0x006b48    program     static                          
+           ___if_lbl00092   0x006b48    program     static                          
+           ___if_lbl00093   0x006b48    program     static                          
+           ___if_lbl00115   0x007d10    program     static                          
+           ___if_lbl00122   0x007d64    program     static                          
+       ___return_lbl00000   0x000004    program     static                          
+       ___return_lbl00000   0x006b6c    program     static                          
+       ___return_lbl00001   0x007d64    program     static                          
+       ___return_lbl00001   0x008c44    program     static                          
+       ___return_lbl00001   0x008378    program     static                          
+       ___return_lbl00002   0x008ae6    program     static                          
+       ___return_lbl00003   0x006dd4    program     static                          
+       ___return_lbl00018   0x008438    program     static                          
+       ___return_lbl00027   0x006f54    program     static                          
+       ___return_lbl00028   0x006faa    program     static                          
+       ___return_lbl00029   0x006ffe    program     static                          
+       ___return_lbl00030   0x007094    program     static                          
+       ___return_lbl00032   0x00746e    program     static                          
+       ___return_lbl00073   0x00000c    program     static                          
+       ___return_lbl00074   0x00001c    program     static                          
+   ___switchexit_lbl00003   0x006b68    program     static                          
+   ___switchexit_lbl00009   0x007d12    program     static                          
+   ___switchexit_lbl00026   0x006408    program     static                          
+   ___switchexit_lbl00031   0x0067c6    program     static                          
+   ___switchexit_lbl00035   0x0065a4    program     static                          
+   ___switchexit_lbl00041   0x00659c    program     static                          
+   ___switchexit_lbl00058   0x00677e    program     static                          
+        ___while_lbl00001   0x006112    program     static                          
+        ___while_lbl00002   0x006b6c    program     static                          
+        ___while_lbl00002   0x0080f4    program     static                          
+        ___while_lbl00003   0x008378    program     static                          
+        ___while_lbl00005   0x008184    program     static                          
+        ___while_lbl00006   0x008366    program     static                          
+        ___while_lbl00009   0x008236    program     static                          
+        ___while_lbl00010   0x006222    program     static                          
+        ___while_lbl00010   0x008292    program     static                          
+        ___while_lbl00011   0x006262    program     static                          
+        ___while_lbl00012   0x0082b4    program     static                          
+        ___while_lbl00013   0x008352    program     static                          
+        ___while_lbl00014   0x00630a    program     static                          
+        ___while_lbl00015   0x0082ea    program     static                          
+        ___while_lbl00015   0x00634a    program     static                          
+        ___while_lbl00016   0x008312    program     static                          
+        ___while_lbl00021   0x0083c4    program     static                          
+        ___while_lbl00022   0x008420    program     static                          
+        ___while_lbl00049   0x0072ba    program     static                          
+        ___while_lbl00050   0x0073ea    program     static                          
+        ___while_lbl00086   0x006b1c    program     static                          
+        ___while_lbl00087   0x006b20    program     static                          
+                   __init   0x008c64    program     extern C:\MCC18\src\traditional\stdclib\__init.c
+               __string_0   0x007995    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_1   0x00796b    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_10   0x007883    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_11   0x007871    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_12   0x00784e    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_13   0x00782a    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_14   0x007802    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_15   0x0077e6    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_16   0x0077c1    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_17   0x0077a2    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_18   0x00778d    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_19   0x007766    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_2   0x00795c    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_20   0x00774c    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_21   0x007733    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_22   0x007730    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_23   0x007714    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_24   0x0076ee    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_25   0x0076c5    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_26   0x0076a1    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_27   0x007674    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_28   0x007648    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_29   0x007632    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_3   0x007943    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_30   0x00761d    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_31   0x00760a    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_32   0x0075f0    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_33   0x0075e9    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_34   0x0075d5    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_35   0x0075b7    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_36   0x00758e    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_37   0x007562    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_38   0x00753a    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_39   0x007513    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_4   0x00791d    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_40   0x0074fe    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_41   0x0074ea    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_42   0x0074d2    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_5   0x0078fb    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_6   0x0078f7    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_7   0x0078cc    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_8   0x0078b9    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_9   0x00789d    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __tmplbl_0   0x0071a4    program     static                          
+               __tmplbl_0   0x00825a    program     static                          
+               __tmplbl_0   0x007cfe    program     static                          
+               __tmplbl_0   0x006644    program     static                          
+               __tmplbl_1   0x006634    program     static                          
+               __tmplbl_1   0x008254    program     static                          
+               __tmplbl_1   0x00719a    program     static                          
+               __tmplbl_1   0x007cf6    program     static                          
+              __tmplbl_10   0x005e48    program     static                          
+             __tmplbl_106   0x00219c    program     static                          
+             __tmplbl_108   0x00219a    program     static                          
+             __tmplbl_109   0x00219c    program     static                          
+              __tmplbl_11   0x005e4a    program     static                          
+             __tmplbl_111   0x00219a    program     static                          
+             __tmplbl_112   0x00219c    program     static                          
+             __tmplbl_114   0x001446    program     static                          
+             __tmplbl_115   0x001446    program     static                          
+              __tmplbl_12   0x005e48    program     static                          
+             __tmplbl_120   0x001446    program     static                          
+              __tmplbl_14   0x005e4a    program     static                          
+              __tmplbl_15   0x005e44    program     static                          
+              __tmplbl_16   0x005e1c    program     static                          
+              __tmplbl_17   0x005e1c    program     static                          
+              __tmplbl_18   0x005e1c    program     static                          
+              __tmplbl_19   0x005e1c    program     static                          
+               __tmplbl_2   0x006654    program     static                          
+               __tmplbl_2   0x007192    program     static                          
+               __tmplbl_2   0x008252    program     static                          
+               __tmplbl_2   0x007cee    program     static                          
+              __tmplbl_20   0x005e1c    program     static                          
+              __tmplbl_21   0x005e1c    program     static                          
+              __tmplbl_22   0x005dd8    program     static                          
+              __tmplbl_23   0x005dd8    program     static                          
+              __tmplbl_23   0x000d3e    program     static                          
+              __tmplbl_24   0x005dd8    program     static                          
+              __tmplbl_25   0x005dd8    program     static                          
+              __tmplbl_25   0x004d58    program     static                          
+              __tmplbl_26   0x004d58    program     static                          
+              __tmplbl_27   0x004d66    program     static                          
+              __tmplbl_27   0x0016fe    program     static                          
+              __tmplbl_28   0x004d58    program     static                          
+              __tmplbl_29   0x001434    program     static                          
+               __tmplbl_3   0x0073b2    program     static                          
+               __tmplbl_3   0x00664a    program     static                          
+               __tmplbl_3   0x007ce6    program     static                          
+              __tmplbl_30   0x004daa    program     static                          
+              __tmplbl_30   0x005e44    program     static                          
+              __tmplbl_31   0x005e44    program     static                          
+              __tmplbl_31   0x004a3c    program     static                          
+              __tmplbl_31   0x0020e6    program     static                          
+              __tmplbl_32   0x004d70    program     static                          
+              __tmplbl_32   0x005e44    program     static                          
+              __tmplbl_33   0x004d66    program     static                          
+              __tmplbl_33   0x005e3e    program     static                          
+              __tmplbl_33   0x001cfc    program     static                          
+              __tmplbl_34   0x005e44    program     static                          
+              __tmplbl_34   0x004d34    program     static                          
+              __tmplbl_34   0x00188e    program     static                          
+              __tmplbl_35   0x004d2a    program     static                          
+              __tmplbl_35   0x005e3a    program     static                          
+              __tmplbl_36   0x004bb2    program     static                          
+              __tmplbl_36   0x005e44    program     static                          
+              __tmplbl_36   0x0016d8    program     static                          
+              __tmplbl_37   0x002c6a    program     static                          
+              __tmplbl_37   0x005e3a    program     static                          
+              __tmplbl_37   0x004ba8    program     static                          
+              __tmplbl_37   0x0016d8    program     static                          
+              __tmplbl_38   0x0016fe    program     static                          
+              __tmplbl_38   0x005e44    program     static                          
+              __tmplbl_38   0x004b9e    program     static                          
+              __tmplbl_39   0x004b94    program     static                          
+               __tmplbl_4   0x007cde    program     static                          
+               __tmplbl_4   0x0068aa    program     static                          
+               __tmplbl_4   0x00739c    program     static                          
+              __tmplbl_40   0x000d86    program     static                          
+              __tmplbl_40   0x003172    program     static                          
+              __tmplbl_40   0x004a40    program     static                          
+              __tmplbl_41   0x00316c    program     static                          
+              __tmplbl_41   0x0048e2    program     static                          
+              __tmplbl_42   0x0048c2    program     static                          
+              __tmplbl_43   0x004d58    program     static                          
+              __tmplbl_44   0x004da8    program     static                          
+              __tmplbl_44   0x00219c    program     static                          
+              __tmplbl_45   0x001434    program     static                          
+              __tmplbl_46   0x00219a    program     static                          
+              __tmplbl_48   0x001ffa    program     static                          
+              __tmplbl_49   0x002f30    program     static                          
+               __tmplbl_5   0x007d52    program     static                          
+               __tmplbl_5   0x00689e    program     static                          
+              __tmplbl_50   0x003a80    program     static                          
+              __tmplbl_50   0x004da8    program     static                          
+              __tmplbl_50   0x00219a    program     static                          
+              __tmplbl_51   0x004d58    program     static                          
+              __tmplbl_51   0x00219a    program     static                          
+              __tmplbl_51   0x003a7e    program     static                          
+              __tmplbl_52   0x004daa    program     static                          
+              __tmplbl_52   0x00219a    program     static                          
+              __tmplbl_53   0x00219a    program     static                          
+              __tmplbl_54   0x004d58    program     static                          
+              __tmplbl_54   0x003a7e    program     static                          
+              __tmplbl_54   0x00219a    program     static                          
+              __tmplbl_55   0x003a7e    program     static                          
+              __tmplbl_55   0x0016d8    program     static                          
+              __tmplbl_55   0x004d56    program     static                          
+              __tmplbl_56   0x003a74    program     static                          
+              __tmplbl_56   0x00219a    program     static                          
+              __tmplbl_57   0x003a6a    program     static                          
+              __tmplbl_57   0x00219a    program     static                          
+              __tmplbl_58   0x004daa    program     static                          
+              __tmplbl_58   0x00219a    program     static                          
+              __tmplbl_59   0x004bce    program     static                          
+              __tmplbl_59   0x0020dc    program     static                          
+               __tmplbl_6   0x007d4a    program     static                          
+               __tmplbl_6   0x006b04    program     static                          
+              __tmplbl_60   0x004d1e    program     static                          
+              __tmplbl_60   0x003a7e    program     static                          
+              __tmplbl_60   0x00206e    program     static                          
+              __tmplbl_61   0x003a7e    program     static                          
+              __tmplbl_61   0x001f34    program     static                          
+              __tmplbl_61   0x004d62    program     static                          
+              __tmplbl_62   0x001e80    program     static                          
+              __tmplbl_62   0x004d60    program     static                          
+              __tmplbl_63   0x001d02    program     static                          
+              __tmplbl_63   0x004daa    program     static                          
+              __tmplbl_64   0x001c1a    program     static                          
+              __tmplbl_65   0x001b4c    program     static                          
+              __tmplbl_66   0x0019d4    program     static                          
+              __tmplbl_67   0x003a80    program     static                          
+              __tmplbl_67   0x001898    program     static                          
+              __tmplbl_68   0x00143a    program     static                          
+              __tmplbl_68   0x004daa    program     static                          
+              __tmplbl_68   0x003a80    program     static                          
+              __tmplbl_69   0x00219a    program     static                          
+              __tmplbl_69   0x003a80    program     static                          
+               __tmplbl_7   0x007d42    program     static                          
+               __tmplbl_7   0x006afe    program     static                          
+              __tmplbl_75   0x00219c    program     static                          
+               __tmplbl_8   0x007d3a    program     static                          
+              __tmplbl_80   0x00219c    program     static                          
+              __tmplbl_81   0x00219a    program     static                          
+              __tmplbl_82   0x00219a    program     static                          
+              __tmplbl_85   0x0020e6    program     static                          
+              __tmplbl_87   0x001cfe    program     static                          
+              __tmplbl_88   0x00188a    program     static                          
+              __tmplbl_89   0x00219c    program     static                          
+               __tmplbl_9   0x007d32    program     static                          
+              __tmplbl_92   0x0016fe    program     static                          
+              __tmplbl_93   0x00219c    program     static                          
+              __tmplbl_94   0x00219c    program     static                          
+              __tmplbl_95   0x00219c    program     static                          
+              __tmplbl_97   0x001ffa    program     static                          
+              __tmplbl_98   0x00219c    program     static                          
+            __zero_memory   0x008c56    program     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                _do_cinit   0x008a4a    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                   _entry   0x000000    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                 _startup   0x008c2a    program     extern C:\MCC18\src\traditional\startup\c018i.c
+            apsAddressMap   0x0089d7    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+ apsAddressMapValidityKey   0x0089d5    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+               clear_loop   0x008c5c    program     static C:\MCC18\src\traditional\proc\p18F4620.asm
+                 config1H   0x300001    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                 config2H   0x300003    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                 config2L   0x300002    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                 config3H   0x300005    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                 config4L   0x300006    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                copy_loop   0x008abc    program     static                          
+            copy_one_byte   0x008ac2    program     static                          
+                     done   0x008ae6    program     static                          
+             done_copying   0x008ad0    program     static                          
+                   filler   0x00893c    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+                  filler2   0x008a09    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+                  jAisNeg   0x008510    program     static C:\MCC18\src\traditional\math\compFP.asm
+             jBothNotZero   0x0084b2    program     static C:\MCC18\src\traditional\math\compFP.asm
+                      jEQ   0x0084ce    program     static C:\MCC18\src\traditional\math\compFP.asm
+                     jEnd   0x00886a    program     static C:\MCC18\src\traditional\stdclib\mcmpp2r.asm
+                     jEnd   0x0088b0    program     static C:\MCC18\src\traditional\stdclib\memcpy.asm
+                     jEnd   0x008818    program     static C:\MCC18\src\traditional\stdclib\memcmp.asm
+                     jEnd   0x008906    program     static C:\MCC18\src\traditional\stdclib\mcpyp2r.asm
+                     jEnd   0x00893a    program     static C:\MCC18\src\traditional\stdclib\memset.asm
+                    jExch   0x0084da    program     static C:\MCC18\src\traditional\math\compFP.asm
+                   jExpEQ   0x008520    program     static C:\MCC18\src\traditional\math\compFP.asm
+                   jFinal   0x008504    program     static C:\MCC18\src\traditional\math\compFP.asm
+                jI2F32Beg   0x008468    program     static C:\MCC18\src\traditional\math\cast32FP.asm
+                    jLoop   0x00891c    program     static C:\MCC18\src\traditional\stdclib\memset.asm
+                    jLoop   0x0088e8    program     static C:\MCC18\src\traditional\stdclib\mcpyp2r.asm
+                    jLoop   0x008894    program     static C:\MCC18\src\traditional\stdclib\memcpy.asm
+                    jLoop   0x00884c    program     static C:\MCC18\src\traditional\stdclib\mcmpp2r.asm
+                    jLoop   0x0087fc    program     static C:\MCC18\src\traditional\stdclib\memcmp.asm
+                      jNE   0x0084d2    program     static C:\MCC18\src\traditional\math\compFP.asm
+                  jNoExch   0x0084fa    program     static C:\MCC18\src\traditional\math\compFP.asm
+                  jPkLoop   0x008584    program     static C:\MCC18\src\traditional\math\packFP.asm
+             jPkRoundDone   0x0085ce    program     static C:\MCC18\src\traditional\math\packFP.asm
+               jPkRoundIt   0x0085b6    program     static C:\MCC18\src\traditional\math\packFP.asm
+             jPkShiftDone   0x0085a0    program     static C:\MCC18\src\traditional\math\packFP.asm
+           jReturnPosInf0   0x00855a    program     static C:\MCC18\src\traditional\math\packFP.asm
+                  jRotate   0x00852c    program     static C:\MCC18\src\traditional\math\compFP.asm
+                   jShift   0x008516    program     static C:\MCC18\src\traditional\math\compFP.asm
+                 jSignsEQ   0x0084b6    program     static C:\MCC18\src\traditional\math\compFP.asm
+                  jUnpkA1   0x0085f8    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+                  jUnpkA2   0x008610    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+                 jUnpkANZ   0x008606    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+                  jUnpkB1   0x008628    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+                  jUnpkB2   0x008640    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+                 jUnpkBNZ   0x008636    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+                 jUnpkNaN   0x00861a    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+               jZero1and2   0x00855e    program     static C:\MCC18\src\traditional\math\packFP.asm
+                     loop   0x008c3a    program     static                          
+              macLongAddr   0x00002a    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+                     main   0x006086    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                   memcmp   0x0087dc    program     extern C:\MCC18\src\traditional\stdclib\memcmp.asm
+            memcmppgm2ram   0x00882e    program     extern C:\MCC18\src\traditional\stdclib\mcmpp2r.asm
+                   memcpy   0x00886c    program     extern C:\MCC18\src\traditional\stdclib\memcpy.asm
+            memcpypgm2ram   0x0088c2    program     extern C:\MCC18\src\traditional\stdclib\mcpyp2r.asm
+                   memset   0x008908    program     extern C:\MCC18\src\traditional\stdclib\memset.asm
+       myProcessesAreDone   0x006b80    program     extern C:\MpZBee\DemoRFD\RFD.c  
+            neighborTable   0x008980    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+        neighborTableInfo   0x00897c    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+                     test   0x008a64    program     static                          
+                timeToAdd   0x008bc2    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                   ADCON0   0x000fc2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               ADCON0bits   0x000fc2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   ADCON1   0x000fc1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               ADCON1bits   0x000fc1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   ADCON2   0x000fc0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               ADCON2bits   0x000fc0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    ADRES   0x000fc3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   ADRESH   0x000fc4       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   ADRESL   0x000fc3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  BAUDCON   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              BAUDCONbits   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  BAUDCTL   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              BAUDCTLbits   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                      BSR   0x000fe0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  CCP1CON   0x000fbd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              CCP1CONbits   0x000fbd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  CCP2CON   0x000fba       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              CCP2CONbits   0x000fba       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    CCPR1   0x000fbe       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   CCPR1H   0x000fbf       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   CCPR1L   0x000fbe       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    CCPR2   0x000fbb       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   CCPR2H   0x000fbc       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   CCPR2L   0x000fbb       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    CMCON   0x000fb4       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                CMCONbits   0x000fb4       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   CVRCON   0x000fb5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               CVRCONbits   0x000fb5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+          CurrentRxPacket   0x000e80       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                     DDRA   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 DDRAbits   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     DDRB   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 DDRBbits   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     DDRC   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 DDRCbits   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     DDRD   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 DDRDbits   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     DDRE   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 DDREbits   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    DEBUG   0x000fd4       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  ECCP1AS   0x000fb6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              ECCP1ASbits   0x000fb6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    EEADR   0x000fa9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   EEADRH   0x000faa       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   EECON1   0x000fa6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               EECON1bits   0x000fa6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   EECON2   0x000fa7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   EEDATA   0x000fa8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     FSR0   0x000fe9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    FSR0H   0x000fea       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    FSR0L   0x000fe9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     FSR1   0x000fe1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    FSR1H   0x000fe2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    FSR1L   0x000fe1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     FSR2   0x000fd9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    FSR2H   0x000fda       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    FSR2L   0x000fd9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              GIEH_backup   0x000f00       data     static C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                  HLVDCON   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              HLVDCONbits   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    INDF0   0x000fef       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    INDF1   0x000fe7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    INDF2   0x000fdf       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   INTCON   0x000ff2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  INTCON2   0x000ff1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              INTCON2bits   0x000ff1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  INTCON3   0x000ff0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              INTCON3bits   0x000ff0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               INTCONbits   0x000ff2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     IPR1   0x000f9f       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 IPR1bits   0x000f9f       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     IPR2   0x000fa2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 IPR2bits   0x000fa2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                IntStatus   0x000f01       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                     LATA   0x000f89       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 LATAbits   0x000f89       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     LATB   0x000f8a       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 LATBbits   0x000f8a       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     LATC   0x000f8b       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 LATCbits   0x000f8b       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     LATD   0x000f8c       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 LATDbits   0x000f8c       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     LATE   0x000f8d       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 LATEbits   0x000f8d       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   LVDCON   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               LVDCONbits   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                      NIB   0x000ed9       data     extern C:\MPZBee\ZigbeeStack\zNWK.c
+        NetworkDescriptor   0x000eed       data     extern C:\MpZBee\DemoRFD\RFD.c  
+                   OSCCON   0x000fd3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               OSCCONbits   0x000fd3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  OSCTUNE   0x000f9b       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              OSCTUNEbits   0x000f9b       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                       PC   0x000ff9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                      PCL   0x000ff9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   PCLATH   0x000ffa       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   PCLATU   0x000ffb       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+          PHYTasksPending   0x000f0a       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                     PIE1   0x000f9d       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 PIE1bits   0x000f9d       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     PIE2   0x000fa0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 PIE2bits   0x000fa0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     PIR1   0x000f9e       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 PIR1bits   0x000f9e       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     PIR2   0x000fa1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 PIR2bits   0x000fa1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   PLUSW0   0x000feb       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   PLUSW1   0x000fe3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   PLUSW2   0x000fdb       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PORTA   0x000f80       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                PORTAbits   0x000f80       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PORTB   0x000f81       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                PORTBbits   0x000f81       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PORTC   0x000f82       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                PORTCbits   0x000f82       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PORTD   0x000f83       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                PORTDbits   0x000f83       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PORTE   0x000f84       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                PORTEbits   0x000f84       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 POSTDEC0   0x000fed       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 POSTDEC1   0x000fe5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 POSTDEC2   0x000fdd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 POSTINC0   0x000fee       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 POSTINC1   0x000fe6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 POSTINC2   0x000fde       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                      PR2   0x000fcb       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  PREINC0   0x000fec       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  PREINC1   0x000fe4       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  PREINC2   0x000fdc       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     PROD   0x000ff3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PRODH   0x000ff4       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PRODL   0x000ff3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  PWM1CON   0x000fb7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              PWM1CONbits   0x000fb7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     RCON   0x000fd0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 RCONbits   0x000fd0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    RCREG   0x000fae       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    RCSTA   0x000fab       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                RCSTAbits   0x000fab       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 RxBuffer   0x000a00       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                   RxData   0x000f0b       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                   RxRead   0x000ea4       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                  RxWrite   0x000ea5       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                     SIGN   0x00000e       data     extern C:\MCC18\src\traditional\math\cmath18.asm
+                    SPBRG   0x000faf       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   SPBRGH   0x000fb0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   SSPADD   0x000fc8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   SSPBUF   0x000fc9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  SSPCON1   0x000fc6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              SSPCON1bits   0x000fc6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  SSPCON2   0x000fc5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              SSPCON2bits   0x000fc5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  SSPSTAT   0x000fc7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              SSPSTATbits   0x000fc7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   STATUS   0x000fd8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               STATUSbits   0x000fd8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   STKPTR   0x000ffc       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               STKPTRbits   0x000ffc       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    T0CON   0x000fd5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                T0CONbits   0x000fd5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    T1CON   0x000fcd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                T1CONbits   0x000fcd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    T2CON   0x000fca       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                T2CONbits   0x000fca       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    T3CON   0x000fb1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                T3CONbits   0x000fb1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   TABLAT   0x000ff5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   TBLPTR   0x000ff6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  TBLPTRH   0x000ff7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  TBLPTRL   0x000ff6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  TBLPTRU   0x000ff8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TMR0H   0x000fd7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TMR0L   0x000fd6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TMR1H   0x000fcf       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TMR1L   0x000fce       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     TMR2   0x000fcc       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TMR3H   0x000fb3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TMR3L   0x000fb2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                      TOS   0x000ffd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     TOSH   0x000ffe       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     TOSL   0x000ffd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     TOSU   0x000fff       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TRISA   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                TRISAbits   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TRISB   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                TRISBbits   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TRISC   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                TRISCbits   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TRISD   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                TRISDbits   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TRISE   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                TRISEbits   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+          TRXCurrentState   0x000f0c       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                    TXREG   0x000fad       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TXSTA   0x000fac       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                TXSTAbits   0x000fac       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 TxBuffer   0x000e00       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                   TxData   0x000ea6       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                 TxHeader   0x000ea7       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                   TxStat   0x000f0d       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                        W   0x000fe8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   WDTCON   0x000fd1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               WDTCONbits   0x000fd1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     WREG   0x000fe8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+             ZigBeeStatus   0x000ea8       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                 __AARGB0   0x000007       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB1   0x000006       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB2   0x000005       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB3   0x000004       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB4   0x000003       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB5   0x000002       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB6   0x000001       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB7   0x000000       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                   __AEXP   0x000008       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __BARGB0   0x00000c       data     extern C:\MCC18\src\traditional\math\barg.asm
+                 __BARGB1   0x00000b       data     extern C:\MCC18\src\traditional\math\barg.asm
+                 __BARGB2   0x00000a       data     extern C:\MCC18\src\traditional\math\barg.asm
+                 __BARGB3   0x000009       data     extern C:\MCC18\src\traditional\math\barg.asm
+                   __BEXP   0x00000d       data     extern C:\MCC18\src\traditional\math\barg.asm
+                __FPFLAGS   0x00000f       data     extern C:\MCC18\src\traditional\math\cmath18.asm
+            __FPFLAGSbits   0x00000f       data     extern C:\MCC18\src\traditional\math\cmath18.asm
+                  __REMB0   0x000003       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                  __REMB1   0x000002       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                  __REMB2   0x000001       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                  __REMB3   0x000000       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                   __TEMP   0x000013       data     extern C:\MCC18\src\traditional\math\temparg.asm
+                 __TEMPB0   0x000013       data     extern C:\MCC18\src\traditional\math\temparg.asm
+                 __TEMPB1   0x000012       data     extern C:\MCC18\src\traditional\math\temparg.asm
+                 __TEMPB2   0x000011       data     extern C:\MCC18\src\traditional\math\temparg.asm
+                 __TEMPB3   0x000010       data     extern C:\MCC18\src\traditional\math\temparg.asm
+                  __tmp_0   0x000014       data     static C:\MpZBee\DemoRFD\RFD.c  
+                  __tmp_0   0x000014       data     static C:\MPZBee\Common\sralloc.c
+                  __tmp_0   0x000014       data     static C:\MPZBee\Common\Console.c
+                  __tmp_0   0x000014       data     static C:\MPZBee\ZigbeeStack\zZDO.C
+                  __tmp_0   0x000014       data     static C:\MPZBee\ZigbeeStack\zAPS.c
+                  __tmp_0   0x000014       data     static C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                  __tmp_0   0x000014       data     static C:\MPZBee\ZigbeeStack\zNVM.c
+                  __tmp_0   0x000014       data     static C:\MPZBee\ZigbeeStack\zNWK.c
+                  __tmp_0   0x000014       data     static C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                  __tmp_1   0x000020       data     static C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+            _uDynamicHeap   0x000100       data     extern C:\MPZBee\Common\sralloc.c
+               aplTransId   0x000eaa       data     extern C:\MPZBee\ZigbeeStack\zAPS.c
+   apsConfirmationHandles   0x000ec1       data     extern C:\MPZBee\ZigbeeStack\zAPS.c
+                apsStatus   0x000eab       data     extern C:\MPZBee\ZigbeeStack\zAPS.c
+     associationReqParams   0x000080       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                curr_byte   0x0000f7       data     static C:\MCC18\src\traditional\startup\c018i.c
+               curr_entry   0x0000f9       data     static C:\MCC18\src\traditional\startup\c018i.c
+        currentAPSAddress   0x0000ea       data     extern C:\MPZBee\ZigbeeStack\zNVM.c
+    currentNeighborRecord   0x0000d3       data     extern C:\MPZBee\ZigbeeStack\zNVM.c
+ currentNeighborTableInfo   0x0000e4       data     extern C:\MPZBee\ZigbeeStack\zNVM.c
+ currentNetworkDescriptor   0x000ee8       data     extern C:\MpZBee\DemoRFD\RFD.c  
+            currentPacket   0x000083       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+         currentPrimitive   0x000eea       data     extern C:\MpZBee\DemoRFD\RFD.c  
+                 data_ptr   0x0000fb       data     static C:\MCC18\src\traditional\startup\c018i.c
+       destinationAddress   0x000eeb       data     extern C:\MpZBee\DemoRFD\RFD.c  
+                     flag   0x000ef2       data     extern C:\MPZBee\ZigbeeStack\zNVM.c
+       macIndirectBuffers   0x000091       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                   macPIB   0x00009b       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                macStatus   0x0000b5       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+          macTasksPending   0x0000b6       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+            myStatusFlags   0x000ee7       data     static C:\MpZBee\DemoRFD\RFD.c  
+   nwkConfirmationHandles   0x000ec9       data     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                nwkStatus   0x000eda       data     extern C:\MPZBee\ZigbeeStack\zNWK.c
+              orphanTries   0x000eef       data     extern C:\MpZBee\DemoRFD\RFD.c  
+   pCurrentNeighborRecord   0x0000e8       data     extern C:\MPZBee\ZigbeeStack\zNVM.c
+                   params   0x000e82       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+   pendingAckFrameControl   0x000f02       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                 phyError   0x000f04       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                   phyPIB   0x000f05       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                     prom   0x0000f4       data     static C:\MCC18\src\traditional\startup\c018i.c
+                savedBits   0x000f0e       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+               scanParams   0x0000b7       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+           sequenceNumber   0x0000fe       data     extern C:\MPZBee\ZigbeeStack\zZDO.C
+          timerExtension1   0x000ef0       data     extern C:\MPZBee\ZigbeeStack\SymbolTime.c
+          timerExtension2   0x000ef1       data     extern C:\MPZBee\ZigbeeStack\SymbolTime.c
+                zdoStatus   0x0000ff       data     extern C:\MPZBee\ZigbeeStack\zZDO.C
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   _entry   0x000000    program     extern C:\MCC18\src\traditional\startup\c018i.c
+       ___return_lbl00000   0x000004    program     static                          
+               HighVector   0x000008    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+       ___return_lbl00073   0x00000c    program     static                          
+                LowVector   0x000018    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+       ___return_lbl00074   0x00001c    program     static                          
+              macLongAddr   0x00002a    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+    MACHasBackgroundTasks   0x000040    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                   MACGet   0x00004c    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+             MACDiscardRx   0x000062    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+               MACDisable   0x00007a    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                MACEnable   0x000086    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                  MACInit   0x00015e    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                 MACTasks   0x0001bc    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+              __tmplbl_23   0x000d3e    program     static                          
+              __tmplbl_40   0x000d86    program     static                          
+              __tmplbl_29   0x001434    program     static                          
+              __tmplbl_45   0x001434    program     static                          
+              __tmplbl_68   0x00143a    program     static                          
+             __tmplbl_120   0x001446    program     static                          
+             __tmplbl_115   0x001446    program     static                          
+             __tmplbl_114   0x001446    program     static                          
+              __tmplbl_55   0x0016d8    program     static                          
+              __tmplbl_36   0x0016d8    program     static                          
+              __tmplbl_37   0x0016d8    program     static                          
+              __tmplbl_92   0x0016fe    program     static                          
+              __tmplbl_38   0x0016fe    program     static                          
+              __tmplbl_27   0x0016fe    program     static                          
+              __tmplbl_88   0x00188a    program     static                          
+              __tmplbl_34   0x00188e    program     static                          
+              __tmplbl_67   0x001898    program     static                          
+              __tmplbl_66   0x0019d4    program     static                          
+              __tmplbl_65   0x001b4c    program     static                          
+              __tmplbl_64   0x001c1a    program     static                          
+              __tmplbl_33   0x001cfc    program     static                          
+              __tmplbl_87   0x001cfe    program     static                          
+              __tmplbl_63   0x001d02    program     static                          
+              __tmplbl_62   0x001e80    program     static                          
+              __tmplbl_61   0x001f34    program     static                          
+              __tmplbl_48   0x001ffa    program     static                          
+              __tmplbl_97   0x001ffa    program     static                          
+              __tmplbl_60   0x00206e    program     static                          
+              __tmplbl_59   0x0020dc    program     static                          
+              __tmplbl_85   0x0020e6    program     static                          
+              __tmplbl_31   0x0020e6    program     static                          
+              __tmplbl_58   0x00219a    program     static                          
+              __tmplbl_57   0x00219a    program     static                          
+              __tmplbl_56   0x00219a    program     static                          
+              __tmplbl_69   0x00219a    program     static                          
+              __tmplbl_54   0x00219a    program     static                          
+              __tmplbl_53   0x00219a    program     static                          
+              __tmplbl_52   0x00219a    program     static                          
+              __tmplbl_51   0x00219a    program     static                          
+              __tmplbl_50   0x00219a    program     static                          
+              __tmplbl_46   0x00219a    program     static                          
+              __tmplbl_82   0x00219a    program     static                          
+             __tmplbl_111   0x00219a    program     static                          
+              __tmplbl_81   0x00219a    program     static                          
+             __tmplbl_108   0x00219a    program     static                          
+             __tmplbl_106   0x00219c    program     static                          
+             __tmplbl_112   0x00219c    program     static                          
+              __tmplbl_80   0x00219c    program     static                          
+             __tmplbl_109   0x00219c    program     static                          
+              __tmplbl_75   0x00219c    program     static                          
+              __tmplbl_98   0x00219c    program     static                          
+              __tmplbl_95   0x00219c    program     static                          
+              __tmplbl_94   0x00219c    program     static                          
+              __tmplbl_93   0x00219c    program     static                          
+              __tmplbl_89   0x00219c    program     static                          
+              __tmplbl_44   0x00219c    program     static                          
+     MLME_SET_macPANId_hw   0x0021b4    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+MLME_SET_macShortAddress_hw   0x0021d6    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+    APSHasBackgroundTasks   0x0021f8    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+                  APSInit   0x002204    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+                 APSTasks   0x002334    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+              __tmplbl_37   0x002c6a    program     static                          
+              __tmplbl_49   0x002f30    program     static                          
+              __tmplbl_41   0x00316c    program     static                          
+              __tmplbl_40   0x003172    program     static                          
+              __tmplbl_57   0x003a6a    program     static                          
+              __tmplbl_56   0x003a74    program     static                          
+              __tmplbl_55   0x003a7e    program     static                          
+              __tmplbl_54   0x003a7e    program     static                          
+              __tmplbl_51   0x003a7e    program     static                          
+              __tmplbl_60   0x003a7e    program     static                          
+              __tmplbl_61   0x003a7e    program     static                          
+              __tmplbl_69   0x003a80    program     static                          
+              __tmplbl_67   0x003a80    program     static                          
+              __tmplbl_68   0x003a80    program     static                          
+              __tmplbl_50   0x003a80    program     static                          
+  APSClearAPSAddressTable   0x003a98    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+                   APSGet   0x003b08    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+         LookupAPSAddress   0x003b24    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+        APSSaveAPSAddress   0x003bba    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+     LookupAPSLongAddress   0x003cd8    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+       APSFromShortToLong   0x003d64    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+       APSFromLongToShort   0x003e06    program     extern C:\MPZBee\ZigbeeStack\zAPS.c
+    NWKHasBackgroundTasks   0x003e5e    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                  NWKInit   0x003e6a    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                 NWKTasks   0x003ed4    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+              __tmplbl_42   0x0048c2    program     static                          
+              __tmplbl_41   0x0048e2    program     static                          
+              __tmplbl_31   0x004a3c    program     static                          
+              __tmplbl_40   0x004a40    program     static                          
+              __tmplbl_39   0x004b94    program     static                          
+              __tmplbl_38   0x004b9e    program     static                          
+              __tmplbl_37   0x004ba8    program     static                          
+              __tmplbl_36   0x004bb2    program     static                          
+              __tmplbl_59   0x004bce    program     static                          
+              __tmplbl_60   0x004d1e    program     static                          
+              __tmplbl_35   0x004d2a    program     static                          
+              __tmplbl_34   0x004d34    program     static                          
+              __tmplbl_55   0x004d56    program     static                          
+              __tmplbl_54   0x004d58    program     static                          
+              __tmplbl_43   0x004d58    program     static                          
+              __tmplbl_28   0x004d58    program     static                          
+              __tmplbl_26   0x004d58    program     static                          
+              __tmplbl_25   0x004d58    program     static                          
+              __tmplbl_51   0x004d58    program     static                          
+              __tmplbl_62   0x004d60    program     static                          
+              __tmplbl_61   0x004d62    program     static                          
+              __tmplbl_33   0x004d66    program     static                          
+              __tmplbl_27   0x004d66    program     static                          
+              __tmplbl_32   0x004d70    program     static                          
+              __tmplbl_50   0x004da8    program     static                          
+              __tmplbl_44   0x004da8    program     static                          
+              __tmplbl_63   0x004daa    program     static                          
+              __tmplbl_58   0x004daa    program     static                          
+              __tmplbl_68   0x004daa    program     static                          
+              __tmplbl_52   0x004daa    program     static                          
+              __tmplbl_30   0x004daa    program     static                          
+       CanAddNeighborNode   0x004dc2    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+         NLME_GET_nwkBCSN   0x004e5a    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+    NWKClearNeighborTable   0x004e68    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                   NWKGet   0x004efa    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+  NWKLookupNodeByLongAddr   0x004f16    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+NWKLookupNodeByShortAddrVal   0x004fb0    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+   NWKThisIsMyLongAddress   0x005038    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+     NWKTidyNeighborTable   0x0050b8    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+Prepare_MCPS_DATA_request   0x005198    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+ RemoveNeighborTableEntry   0x00522e    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+VariableAndTableInitialization   0x00529a    program     extern C:\MPZBee\ZigbeeStack\zNWK.c
+    ZDOHasBackgroundTasks   0x005302    program     extern C:\MPZBee\ZigbeeStack\zZDO.C
+                  ZDOInit   0x00530e    program     extern C:\MPZBee\ZigbeeStack\zZDO.C
+                 ZDOTasks   0x005314    program     extern C:\MPZBee\ZigbeeStack\zZDO.C
+              __tmplbl_22   0x005dd8    program     static                          
+              __tmplbl_23   0x005dd8    program     static                          
+              __tmplbl_25   0x005dd8    program     static                          
+              __tmplbl_24   0x005dd8    program     static                          
+              __tmplbl_21   0x005e1c    program     static                          
+              __tmplbl_20   0x005e1c    program     static                          
+              __tmplbl_19   0x005e1c    program     static                          
+              __tmplbl_16   0x005e1c    program     static                          
+              __tmplbl_18   0x005e1c    program     static                          
+              __tmplbl_17   0x005e1c    program     static                          
+              __tmplbl_37   0x005e3a    program     static                          
+              __tmplbl_35   0x005e3a    program     static                          
+              __tmplbl_33   0x005e3e    program     static                          
+              __tmplbl_38   0x005e44    program     static                          
+              __tmplbl_32   0x005e44    program     static                          
+              __tmplbl_36   0x005e44    program     static                          
+              __tmplbl_15   0x005e44    program     static                          
+              __tmplbl_31   0x005e44    program     static                          
+              __tmplbl_34   0x005e44    program     static                          
+              __tmplbl_30   0x005e44    program     static                          
+              __tmplbl_10   0x005e48    program     static                          
+              __tmplbl_12   0x005e48    program     static                          
+              __tmplbl_11   0x005e4a    program     static                          
+              __tmplbl_14   0x005e4a    program     static                          
+   FinishAddressResponses   0x005e62    program     extern C:\MPZBee\ZigbeeStack\zZDO.C
+        IsThisMyShortAddr   0x005fd2    program     extern C:\MPZBee\ZigbeeStack\zZDO.C
+   PrepareMessageResponse   0x006038    program     extern C:\MPZBee\ZigbeeStack\zZDO.C
+                     main   0x006086    program     extern C:\MpZBee\DemoRFD\RFD.c  
+        ___while_lbl00001   0x006112    program     static                          
+      ___case_54_lbl00004   0x006156    program     static                          
+         ___else_lbl00006   0x006178    program     static                          
+        SubmitJoinRequest   0x006188    program     static                          
+           ___if_lbl00005   0x0061e8    program     static                          
+         ___else_lbl00008   0x0061ea    program     static                          
+           ___if_lbl00007   0x006204    program     static                          
+      ___case_58_lbl00009   0x006208    program     static                          
+        ___while_lbl00010   0x006222    program     static                          
+        ___while_lbl00011   0x006262    program     static                          
+         ___else_lbl00021   0x006264    program     static                          
+         ___else_lbl00013   0x0062a4    program     static                          
+           ___if_lbl00012   0x0062b4    program     static                          
+         ___else_lbl00019   0x0062b6    program     static                          
+         ___else_lbl00017   0x0062fa    program     static                          
+        ___while_lbl00014   0x00630a    program     static                          
+           ___if_lbl00018   0x00634a    program     static                          
+           ___if_lbl00016   0x00634a    program     static                          
+           ___if_lbl00020   0x00634a    program     static                          
+        ___while_lbl00015   0x00634a    program     static                          
+      ___case_77_lbl00024   0x00634e    program     static                          
+         ___else_lbl00023   0x006394    program     static                          
+           ___if_lbl00022   0x0063a4    program     static                          
+      ___case_61_lbl00025   0x0063aa    program     static                          
+      ___case_62_lbl00030   0x0063c0    program     static                          
+       ___case_0_lbl00027   0x0063d2    program     static                          
+     ___case_198_lbl00028   0x0063e4    program     static                          
+     ___case_193_lbl00029   0x0063f6    program     static                          
+   ___switchexit_lbl00026   0x006408    program     static                          
+      ___case_81_lbl00071   0x00640e    program     static                          
+       ___case_0_lbl00032   0x00642e    program     static                          
+          ___for_lbl00052   0x006472    program     static                          
+     ___case_128_lbl00040   0x0064b6    program     static                          
+          ___for_lbl00038   0x0064d2    program     static                          
+          ___for_lbl00036   0x0064ea    program     static                          
+          ___for_lbl00037   0x0064f0    program     static                          
+           ___if_lbl00039   0x006518    program     static                          
+     ___case_160_lbl00047   0x00651a    program     static                          
+       ___case_0_lbl00042   0x006530    program     static                          
+     ___case_132_lbl00043   0x006554    program     static                          
+     ___case_133_lbl00044   0x006566    program     static                          
+     ___case_134_lbl00045   0x006578    program     static                          
+      ___default_lbl00046   0x00658a    program     static                          
+   ___switchexit_lbl00041   0x00659c    program     static                          
+      ___default_lbl00048   0x0065a2    program     static                          
+   ___switchexit_lbl00035   0x0065a4    program     static                          
+          ___for_lbl00051   0x0065a4    program     static                          
+          ___for_lbl00049   0x0065ba    program     static                          
+          ___for_lbl00050   0x0065c0    program     static                          
+          ___for_lbl00033   0x0065c0    program     static                          
+           ___if_lbl00053   0x0065c6    program     static                          
+          ___for_lbl00034   0x0065c6    program     static                          
+       ___case_8_lbl00069   0x0065c8    program     static                          
+          ___for_lbl00067   0x0065e2    program     static                          
+               __tmplbl_1   0x006634    program     static                          
+               __tmplbl_0   0x006644    program     static                          
+               __tmplbl_3   0x00664a    program     static                          
+               __tmplbl_2   0x006654    program     static                          
+       ___case_0_lbl00059   0x0066da    program     static                          
+     ___case_255_lbl00060   0x006700    program     static                          
+     ___case_240_lbl00061   0x006726    program     static                          
+      ___default_lbl00062   0x00674c    program     static                          
+   ___switchexit_lbl00058   0x00677e    program     static                          
+           ___if_lbl00063   0x00677e    program     static                          
+         ___else_lbl00065   0x0067b8    program     static                          
+           ___if_lbl00066   0x0067bc    program     static                          
+           ___if_lbl00064   0x0067bc    program     static                          
+          ___for_lbl00054   0x0067bc    program     static                          
+          ___for_lbl00055   0x0067c2    program     static                          
+           ___if_lbl00068   0x0067c2    program     static                          
+      ___default_lbl00070   0x0067c4    program     static                          
+   ___switchexit_lbl00031   0x0067c6    program     static                          
+      ___case_80_lbl00074   0x0067cc    program     static                          
+         ___else_lbl00073   0x0067fe    program     static                          
+           ___if_lbl00072   0x00680e    program     static                          
+       ___case_0_lbl00095   0x006814    program     static                          
+         ___else_lbl00076   0x006868    program     static                          
+           ___if_lbl00075   0x006890    program     static                          
+           ___if_lbl00077   0x006890    program     static                          
+         ___else_lbl00094   0x006892    program     static                          
+               __tmplbl_5   0x00689e    program     static                          
+               __tmplbl_4   0x0068aa    program     static                          
+         ___else_lbl00081   0x006976    program     static                          
+           ___if_lbl00079   0x006abe    program     static                          
+           ___if_lbl00080   0x006abe    program     static                          
+           ___if_lbl00082   0x006ac0    program     static                          
+           ___if_lbl00083   0x006af2    program     static                          
+           ___if_lbl00084   0x006af2    program     static                          
+         ___else_lbl00091   0x006af4    program     static                          
+               __tmplbl_7   0x006afe    program     static                          
+               __tmplbl_6   0x006b04    program     static                          
+        ___while_lbl00086   0x006b1c    program     static                          
+        ___while_lbl00087   0x006b20    program     static                          
+           ___if_lbl00092   0x006b48    program     static                          
+           ___if_lbl00088   0x006b48    program     static                          
+           ___if_lbl00090   0x006b48    program     static                          
+           ___if_lbl00089   0x006b48    program     static                          
+           ___if_lbl00093   0x006b48    program     static                          
+      ___default_lbl00096   0x006b4a    program     static                          
+   ___switchexit_lbl00003   0x006b68    program     static                          
+        ___while_lbl00002   0x006b6c    program     static                          
+       ___return_lbl00000   0x006b6c    program     static                          
+       myProcessesAreDone   0x006b80    program     extern C:\MpZBee\DemoRFD\RFD.c  
+             HardwareInit   0x006b92    program     extern C:\MpZBee\DemoRFD\RFD.c  
+     UserInterruptHandler   0x006bc6    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                   PHYGet   0x006be4    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+    PHYHasBackgroundTasks   0x006c20    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                  PHYInit   0x006c26    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+          ___for_lbl00006   0x006c40    program     static                          
+          ___for_lbl00004   0x006c56    program     static                          
+          ___for_lbl00005   0x006c5a    program     static                          
+          ___for_lbl00009   0x006c5e    program     static                          
+          ___for_lbl00007   0x006c74    program     static                          
+          ___for_lbl00008   0x006c78    program     static                          
+           ___do_lbl00012   0x006dbc    program     static                          
+           ___do_lbl00010   0x006dcc    program     static                          
+           ___do_lbl00011   0x006dd4    program     static                          
+       ___return_lbl00003   0x006dd4    program     static                          
+                 PHYTasks   0x006dde    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+        PHYSetLongRAMAddr   0x006ecc    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+       ___return_lbl00027   0x006f54    program     static                          
+       PHYSetShortRAMAddr   0x006f5c    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+       ___return_lbl00028   0x006faa    program     static                          
+       PHYGetShortRAMAddr   0x006fb2    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+       ___return_lbl00029   0x006ffe    program     static                          
+        PHYGetLongRAMAddr   0x007008    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+       ___return_lbl00030   0x007094    program     static                          
+        PHYSetOutputPower   0x00709e    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                  HighISR   0x0070c4    program     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+         ___else_lbl00035   0x007162    program     static                          
+           ___if_lbl00034   0x00716c    program     static                          
+           ___if_lbl00036   0x00716c    program     static                          
+           ___if_lbl00033   0x00716c    program     static                          
+               __tmplbl_2   0x007192    program     static                          
+               __tmplbl_1   0x00719a    program     static                          
+               __tmplbl_0   0x0071a4    program     static                          
+           ___if_lbl00039   0x0071a8    program     static                          
+         ___else_lbl00041   0x0071c8    program     static                          
+           ___if_lbl00042   0x0071cc    program     static                          
+           ___if_lbl00040   0x0071cc    program     static                          
+           ___if_lbl00043   0x0071d0    program     static                          
+           ___if_lbl00044   0x0071d4    program     static                          
+           ___if_lbl00045   0x00721e    program     static                          
+         ___else_lbl00047   0x007242    program     static                          
+           ___if_lbl00046   0x007268    program     static                          
+           ___if_lbl00048   0x0072ba    program     static                          
+        ___while_lbl00049   0x0072ba    program     static                          
+         ___else_lbl00052   0x007310    program     static                          
+           ___if_lbl00051   0x007348    program     static                          
+           ___if_lbl00053   0x007378    program     static                          
+         ___else_lbl00059   0x00737a    program     static                          
+               __tmplbl_4   0x00739c    program     static                          
+               __tmplbl_3   0x0073b2    program     static                          
+           ___if_lbl00055   0x0073c2    program     static                          
+           ___if_lbl00058   0x0073ca    program     static                          
+           ___if_lbl00057   0x0073ca    program     static                          
+           ___if_lbl00056   0x0073ca    program     static                          
+           ___if_lbl00060   0x0073e8    program     static                          
+        ___while_lbl00050   0x0073ea    program     static                          
+         ___else_lbl00062   0x0073f8    program     static                          
+           ___if_lbl00061   0x00740c    program     static                          
+         ___else_lbl00064   0x00742e    program     static                          
+           ___if_lbl00063   0x007436    program     static                          
+         ___else_lbl00066   0x007438    program     static                          
+           ___if_lbl00065   0x007442    program     static                          
+      DoneReceivingPacket   0x007442    program     static                          
+           ___if_lbl00067   0x007444    program     static                          
+           ___if_lbl00069   0x007452    program     static                          
+           ___if_lbl00068   0x007452    program     static                          
+           ___if_lbl00072   0x00746a    program     static                          
+           ___if_lbl00071   0x00746a    program     static                          
+           ___if_lbl00070   0x00746a    program     static                          
+       ___return_lbl00032   0x00746e    program     static                          
+              __string_42   0x0074d2    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_41   0x0074ea    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_40   0x0074fe    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_39   0x007513    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_38   0x00753a    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_37   0x007562    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_36   0x00758e    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_35   0x0075b7    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_34   0x0075d5    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_33   0x0075e9    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_32   0x0075f0    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_31   0x00760a    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_30   0x00761d    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_29   0x007632    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_28   0x007648    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_27   0x007674    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_26   0x0076a1    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_25   0x0076c5    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_24   0x0076ee    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_23   0x007714    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_22   0x007730    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_21   0x007733    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_20   0x00774c    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_19   0x007766    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_18   0x00778d    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_17   0x0077a2    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_16   0x0077c1    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_15   0x0077e6    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_14   0x007802    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_13   0x00782a    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_12   0x00784e    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_11   0x007871    program     static C:\MpZBee\DemoRFD\RFD.c  
+              __string_10   0x007883    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_9   0x00789d    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_8   0x0078b9    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_7   0x0078cc    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_6   0x0078f7    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_5   0x0078fb    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_4   0x00791d    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_3   0x007943    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_2   0x00795c    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_1   0x00796b    program     static C:\MpZBee\DemoRFD\RFD.c  
+               __string_0   0x007995    program     static C:\MpZBee\DemoRFD\RFD.c  
+               ZigBeeInit   0x0079c4    program     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+              ZigBeeTasks   0x0079fa    program     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+           ___do_lbl00117   0x007a12    program     static                          
+           ___if_lbl00004   0x007a28    program     static                          
+           ___if_lbl00005   0x007a3c    program     static                          
+           ___if_lbl00006   0x007a50    program     static                          
+           ___if_lbl00007   0x007a64    program     static                          
+           ___if_lbl00008   0x007a78    program     static                          
+       ___case_1_lbl00015   0x007c76    program     static                          
+       ___case_4_lbl00014   0x007c76    program     static                          
+       ___case_6_lbl00013   0x007c76    program     static                          
+      ___case_10_lbl00010   0x007c76    program     static                          
+      ___case_12_lbl00012   0x007c76    program     static                          
+       ___case_8_lbl00011   0x007c76    program     static                          
+      ___case_11_lbl00032   0x007c86    program     static                          
+      ___case_21_lbl00028   0x007c86    program     static                          
+      ___case_23_lbl00027   0x007c86    program     static                          
+      ___case_13_lbl00031   0x007c86    program     static                          
+      ___case_16_lbl00030   0x007c86    program     static                          
+      ___case_19_lbl00029   0x007c86    program     static                          
+      ___case_25_lbl00026   0x007c86    program     static                          
+      ___case_29_lbl00025   0x007c86    program     static                          
+       ___case_2_lbl00036   0x007c86    program     static                          
+      ___case_31_lbl00024   0x007c86    program     static                          
+      ___case_35_lbl00023   0x007c86    program     static                          
+      ___case_36_lbl00022   0x007c86    program     static                          
+      ___case_38_lbl00021   0x007c86    program     static                          
+       ___case_3_lbl00037   0x007c86    program     static                          
+      ___case_40_lbl00020   0x007c86    program     static                          
+      ___case_43_lbl00019   0x007c86    program     static                          
+      ___case_45_lbl00018   0x007c86    program     static                          
+      ___case_47_lbl00017   0x007c86    program     static                          
+      ___case_49_lbl00016   0x007c86    program     static                          
+       ___case_7_lbl00035   0x007c86    program     static                          
+       ___case_5_lbl00033   0x007c86    program     static                          
+       ___case_9_lbl00034   0x007c86    program     static                          
+      ___case_74_lbl00039   0x007c96    program     static                          
+      ___case_73_lbl00040   0x007c96    program     static                          
+      ___case_72_lbl00041   0x007c96    program     static                          
+      ___case_71_lbl00042   0x007c96    program     static                          
+      ___case_70_lbl00043   0x007c96    program     static                          
+      ___case_69_lbl00044   0x007c96    program     static                          
+      ___case_68_lbl00045   0x007c96    program     static                          
+      ___case_67_lbl00046   0x007c96    program     static                          
+      ___case_66_lbl00047   0x007c96    program     static                          
+      ___case_65_lbl00048   0x007c96    program     static                          
+      ___case_17_lbl00069   0x007c96    program     static                          
+      ___case_51_lbl00049   0x007c96    program     static                          
+      ___case_50_lbl00050   0x007c96    program     static                          
+      ___case_18_lbl00068   0x007c96    program     static                          
+      ___case_20_lbl00067   0x007c96    program     static                          
+      ___case_48_lbl00051   0x007c96    program     static                          
+      ___case_22_lbl00066   0x007c96    program     static                          
+      ___case_46_lbl00052   0x007c96    program     static                          
+      ___case_24_lbl00065   0x007c96    program     static                          
+      ___case_44_lbl00053   0x007c96    program     static                          
+      ___case_42_lbl00054   0x007c96    program     static                          
+      ___case_41_lbl00055   0x007c96    program     static                          
+      ___case_39_lbl00056   0x007c96    program     static                          
+      ___case_37_lbl00057   0x007c96    program     static                          
+      ___case_26_lbl00064   0x007c96    program     static                          
+      ___case_27_lbl00063   0x007c96    program     static                          
+      ___case_34_lbl00058   0x007c96    program     static                          
+      ___case_33_lbl00059   0x007c96    program     static                          
+      ___case_32_lbl00060   0x007c96    program     static                          
+      ___case_30_lbl00061   0x007c96    program     static                          
+      ___case_28_lbl00062   0x007c96    program     static                          
+      ___case_75_lbl00038   0x007c96    program     static                          
+      ___case_53_lbl00081   0x007ca6    program     static                          
+      ___case_52_lbl00082   0x007ca6    program     static                          
+     ___case_106_lbl00070   0x007ca6    program     static                          
+      ___case_98_lbl00074   0x007ca6    program     static                          
+      ___case_85_lbl00078   0x007ca6    program     static                          
+      ___case_82_lbl00079   0x007ca6    program     static                          
+     ___case_104_lbl00071   0x007ca6    program     static                          
+      ___case_97_lbl00075   0x007ca6    program     static                          
+     ___case_102_lbl00072   0x007ca6    program     static                          
+      ___case_94_lbl00077   0x007ca6    program     static                          
+      ___case_95_lbl00076   0x007ca6    program     static                          
+      ___case_79_lbl00080   0x007ca6    program     static                          
+     ___case_100_lbl00073   0x007ca6    program     static                          
+     ___case_103_lbl00085   0x007cb6    program     static                          
+      ___case_91_lbl00091   0x007cb6    program     static                          
+     ___case_105_lbl00084   0x007cb6    program     static                          
+      ___case_93_lbl00089   0x007cb6    program     static                          
+      ___case_90_lbl00092   0x007cb6    program     static                          
+      ___case_96_lbl00087   0x007cb6    program     static                          
+      ___case_92_lbl00090   0x007cb6    program     static                          
+     ___case_101_lbl00086   0x007cb6    program     static                          
+      ___case_99_lbl00088   0x007cb6    program     static                          
+     ___case_107_lbl00083   0x007cb6    program     static                          
+      ___case_76_lbl00098   0x007cc6    program     static                          
+      ___case_77_lbl00097   0x007cc6    program     static                          
+      ___case_78_lbl00096   0x007cc6    program     static                          
+      ___case_80_lbl00110   0x007cc6    program     static                          
+      ___case_81_lbl00095   0x007cc6    program     static                          
+      ___case_64_lbl00099   0x007cc6    program     static                          
+      ___case_63_lbl00100   0x007cc6    program     static                          
+      ___case_62_lbl00101   0x007cc6    program     static                          
+      ___case_61_lbl00102   0x007cc6    program     static                          
+      ___case_60_lbl00103   0x007cc6    program     static                          
+      ___case_86_lbl00094   0x007cc6    program     static                          
+      ___case_89_lbl00093   0x007cc6    program     static                          
+      ___case_59_lbl00104   0x007cc6    program     static                          
+      ___case_58_lbl00105   0x007cc6    program     static                          
+      ___case_57_lbl00106   0x007cc6    program     static                          
+      ___case_54_lbl00109   0x007cc6    program     static                          
+      ___case_55_lbl00108   0x007cc6    program     static                          
+      ___case_56_lbl00107   0x007cc6    program     static                          
+               __tmplbl_4   0x007cde    program     static                          
+               __tmplbl_3   0x007ce6    program     static                          
+               __tmplbl_2   0x007cee    program     static                          
+               __tmplbl_1   0x007cf6    program     static                          
+               __tmplbl_0   0x007cfe    program     static                          
+         ___else_lbl00116   0x007d08    program     static                          
+           ___if_lbl00115   0x007d10    program     static                          
+           ___do_lbl00002   0x007d12    program     static                          
+   ___switchexit_lbl00009   0x007d12    program     static                          
+           ___do_lbl00003   0x007d1a    program     static                          
+               __tmplbl_9   0x007d32    program     static                          
+               __tmplbl_8   0x007d3a    program     static                          
+               __tmplbl_7   0x007d42    program     static                          
+               __tmplbl_6   0x007d4a    program     static                          
+               __tmplbl_5   0x007d52    program     static                          
+         ___else_lbl00123   0x007d5c    program     static                          
+           ___if_lbl00122   0x007d64    program     static                          
+       ___return_lbl00001   0x007d64    program     static                          
+                SRAMalloc   0x007d6c    program     extern C:\MPZBee\Common\sralloc.c
+                 SRAMfree   0x007f00    program     extern C:\MPZBee\Common\sralloc.c
+             SRAMInitHeap   0x007f24    program     extern C:\MPZBee\Common\sralloc.c
+               _SRAMmerge   0x007fca    program     extern C:\MPZBee\Common\sralloc.c
+                  NVMInit   0x0080e6    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+                 NVMWrite   0x0080e8    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+        ___while_lbl00002   0x0080f4    program     static                          
+           ___if_lbl00004   0x008156    program     static                          
+        ___while_lbl00005   0x008184    program     static                          
+           ___if_lbl00007   0x0081d6    program     static                          
+           ___if_lbl00008   0x008210    program     static                          
+        ___while_lbl00009   0x008236    program     static                          
+               __tmplbl_2   0x008252    program     static                          
+               __tmplbl_1   0x008254    program     static                          
+               __tmplbl_0   0x00825a    program     static                          
+        ___while_lbl00010   0x008292    program     static                          
+        ___while_lbl00012   0x0082b4    program     static                          
+           ___if_lbl00014   0x0082cc    program     static                          
+        ___while_lbl00015   0x0082ea    program     static                          
+        ___while_lbl00016   0x008312    program     static                          
+           ___if_lbl00017   0x008350    program     static                          
+        ___while_lbl00013   0x008352    program     static                          
+        ___while_lbl00006   0x008366    program     static                          
+       ___return_lbl00001   0x008378    program     static                          
+        ___while_lbl00003   0x008378    program     static                          
+                 ClearNVM   0x00838c    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+          ___for_lbl00023   0x0083a2    program     static                          
+        ___while_lbl00021   0x0083c4    program     static                          
+        ___while_lbl00022   0x008420    program     static                          
+          ___for_lbl00019   0x00842c    program     static                          
+       ___return_lbl00018   0x008438    program     static                          
+          ___for_lbl00020   0x008438    program     static                          
+                 FLO3232U   0x00844c    program     extern C:\MCC18\src\traditional\math\cast32FP.asm
+                 FLO3232S   0x008450    program     extern C:\MCC18\src\traditional\math\cast32FP.asm
+                jI2F32Beg   0x008468    program     static C:\MCC18\src\traditional\math\cast32FP.asm
+                  TAGTB32   0x008482    program     extern C:\MCC18\src\traditional\math\gtFP.asm
+              __FpCompare   0x008494    program     extern C:\MCC18\src\traditional\math\compFP.asm
+             jBothNotZero   0x0084b2    program     static C:\MCC18\src\traditional\math\compFP.asm
+                 jSignsEQ   0x0084b6    program     static C:\MCC18\src\traditional\math\compFP.asm
+                      jEQ   0x0084ce    program     static C:\MCC18\src\traditional\math\compFP.asm
+                      jNE   0x0084d2    program     static C:\MCC18\src\traditional\math\compFP.asm
+                    jExch   0x0084da    program     static C:\MCC18\src\traditional\math\compFP.asm
+                  jNoExch   0x0084fa    program     static C:\MCC18\src\traditional\math\compFP.asm
+                   jFinal   0x008504    program     static C:\MCC18\src\traditional\math\compFP.asm
+                  jAisNeg   0x008510    program     static C:\MCC18\src\traditional\math\compFP.asm
+                   jShift   0x008516    program     static C:\MCC18\src\traditional\math\compFP.asm
+                   jExpEQ   0x008520    program     static C:\MCC18\src\traditional\math\compFP.asm
+                  jRotate   0x00852c    program     static C:\MCC18\src\traditional\math\compFP.asm
+            __FpReturnNaN   0x00853e    program     extern C:\MCC18\src\traditional\math\packFP.asm
+                 __FpExit   0x00854a    program     extern C:\MCC18\src\traditional\math\packFP.asm
+        __FpReturnSignInf   0x00854c    program     extern C:\MCC18\src\traditional\math\packFP.asm
+         __FpReturnNegInf   0x008550    program     extern C:\MCC18\src\traditional\math\packFP.asm
+         __FpReturnPosInf   0x008556    program     extern C:\MCC18\src\traditional\math\packFP.asm
+           jReturnPosInf0   0x00855a    program     static C:\MCC18\src\traditional\math\packFP.asm
+               jZero1and2   0x00855e    program     static C:\MCC18\src\traditional\math\packFP.asm
+       __FpReturnSignZero   0x008564    program     extern C:\MCC18\src\traditional\math\packFP.asm
+        __FpReturnNegZero   0x008568    program     extern C:\MCC18\src\traditional\math\packFP.asm
+        __FpReturnPosZero   0x008570    program     extern C:\MCC18\src\traditional\math\packFP.asm
+                 __FpPack   0x008576    program     extern C:\MCC18\src\traditional\math\packFP.asm
+                  jPkLoop   0x008584    program     static C:\MCC18\src\traditional\math\packFP.asm
+             jPkShiftDone   0x0085a0    program     static C:\MCC18\src\traditional\math\packFP.asm
+               jPkRoundIt   0x0085b6    program     static C:\MCC18\src\traditional\math\packFP.asm
+              __FpReturnW   0x0085ce    program     extern C:\MCC18\src\traditional\math\packFP.asm
+             jPkRoundDone   0x0085ce    program     static C:\MCC18\src\traditional\math\packFP.asm
+              __FpUnPackA   0x0085ee    program     extern C:\MCC18\src\traditional\math\UnpackFP.asm
+                  jUnpkA1   0x0085f8    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+                 jUnpkANZ   0x008606    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+                  jUnpkA2   0x008610    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+                 jUnpkNaN   0x00861a    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+              __FpUnPackB   0x00861e    program     extern C:\MCC18\src\traditional\math\UnpackFP.asm
+                  jUnpkB1   0x008628    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+                 jUnpkBNZ   0x008636    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+                  jUnpkB2   0x008640    program     static C:\MCC18\src\traditional\math\UnpackFP.asm
+              ConsoleInit   0x00864a    program     extern C:\MPZBee\Common\Console.c
+      ConsolePutROMString   0x008662    program     extern C:\MPZBee\Common\Console.c
+         ConsoleGetString   0x0086a0    program     extern C:\MPZBee\Common\Console.c
+               ConsolePut   0x008718    program     extern C:\MPZBee\Common\Console.c
+         ConsolePutString   0x008732    program     extern C:\MPZBee\Common\Console.c
+               ConsoleGet   0x00876e    program     extern C:\MPZBee\Common\Console.c
+                PrintChar   0x00877a    program     extern C:\MPZBee\Common\Console.c
+                   memcmp   0x0087dc    program     extern C:\MCC18\src\traditional\stdclib\memcmp.asm
+                    jLoop   0x0087fc    program     static C:\MCC18\src\traditional\stdclib\memcmp.asm
+              _4jContinue   0x008808    program     static C:\MCC18\src\traditional\stdclib\memcmp.asm
+                   _5jEnd   0x008812    program     static C:\MCC18\src\traditional\stdclib\memcmp.asm
+                     jEnd   0x008818    program     static C:\MCC18\src\traditional\stdclib\memcmp.asm
+            memcmppgm2ram   0x00882e    program     extern C:\MCC18\src\traditional\stdclib\mcmpp2r.asm
+                    jLoop   0x00884c    program     static C:\MCC18\src\traditional\stdclib\mcmpp2r.asm
+              _3jContinue   0x008858    program     static C:\MCC18\src\traditional\stdclib\mcmpp2r.asm
+                   _4jEnd   0x008862    program     static C:\MCC18\src\traditional\stdclib\mcmpp2r.asm
+                     jEnd   0x00886a    program     static C:\MCC18\src\traditional\stdclib\mcmpp2r.asm
+                   memcpy   0x00886c    program     extern C:\MCC18\src\traditional\stdclib\memcpy.asm
+                    jLoop   0x008894    program     static C:\MCC18\src\traditional\stdclib\memcpy.asm
+              _4jContinue   0x0088a0    program     static C:\MCC18\src\traditional\stdclib\memcpy.asm
+                   _5jEnd   0x0088aa    program     static C:\MCC18\src\traditional\stdclib\memcpy.asm
+                     jEnd   0x0088b0    program     static C:\MCC18\src\traditional\stdclib\memcpy.asm
+            memcpypgm2ram   0x0088c2    program     extern C:\MCC18\src\traditional\stdclib\mcpyp2r.asm
+                    jLoop   0x0088e8    program     static C:\MCC18\src\traditional\stdclib\mcpyp2r.asm
+              _3jContinue   0x0088f4    program     static C:\MCC18\src\traditional\stdclib\mcpyp2r.asm
+                   _4jEnd   0x0088fe    program     static C:\MCC18\src\traditional\stdclib\mcpyp2r.asm
+                     jEnd   0x008906    program     static C:\MCC18\src\traditional\stdclib\mcpyp2r.asm
+                   memset   0x008908    program     extern C:\MCC18\src\traditional\stdclib\memset.asm
+                    jLoop   0x00891c    program     static C:\MCC18\src\traditional\stdclib\memset.asm
+              _2jContinue   0x008928    program     static C:\MCC18\src\traditional\stdclib\memset.asm
+                   _3jEnd   0x008932    program     static C:\MCC18\src\traditional\stdclib\memset.asm
+                     jEnd   0x00893a    program     static C:\MCC18\src\traditional\stdclib\memset.asm
+                   filler   0x00893c    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+        neighborTableInfo   0x00897c    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+            neighborTable   0x008980    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+ apsAddressMapValidityKey   0x0089d5    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+            apsAddressMap   0x0089d7    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+                  filler2   0x008a09    program     extern C:\MPZBee\ZigbeeStack\zNVM.c
+                _do_cinit   0x008a4a    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                     test   0x008a64    program     static                          
+                copy_loop   0x008abc    program     static                          
+            copy_one_byte   0x008ac2    program     static                          
+             done_copying   0x008ad0    program     static                          
+                     done   0x008ae6    program     static                          
+       ___return_lbl00002   0x008ae6    program     static                          
+          InitSymbolTimer   0x008ae8    program     extern C:\MPZBee\ZigbeeStack\SymbolTime.c
+                  TickGet   0x008afc    program     extern C:\MPZBee\ZigbeeStack\SymbolTime.c
+   Config_Node_Descriptor   0x008b82    program     extern C:\MpZBee\DemoRFD\myZigBee.c
+  Config_Power_Descriptor   0x008b8a    program     extern C:\MpZBee\DemoRFD\myZigBee.c
+Config_Simple_Descriptors   0x008b8c    program     extern C:\MpZBee\DemoRFD\myZigBee.c
+Config_NWK_Mode_and_Params   0x008bb8    program     extern C:\MpZBee\DemoRFD\myZigBee.c
+                timeToAdd   0x008bc2    program     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                   SPIPut   0x008bfe    program     extern C:\MPZBee\Common\MSPI.c  
+                   SPIGet   0x008c20    program     extern C:\MPZBee\Common\MSPI.c  
+                 _startup   0x008c2a    program     extern C:\MCC18\src\traditional\startup\c018i.c
+                     loop   0x008c3a    program     static                          
+       ___return_lbl00001   0x008c44    program     static                          
+           CharacterArray   0x008c46    program     extern C:\MPZBee\Common\Console.c
+            __zero_memory   0x008c56    program     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               clear_loop   0x008c5c    program     static C:\MCC18\src\traditional\proc\p18F4620.asm
+                   __init   0x008c64    program     extern C:\MCC18\src\traditional\stdclib\__init.c
+                 config1H   0x300001    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                 config2L   0x300002    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                 config2H   0x300003    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                 config3H   0x300005    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                 config4L   0x300006    program     extern C:\MpZBee\DemoRFD\RFD.c  
+                 __AARGB7   0x000000       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                  __REMB3   0x000000       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB6   0x000001       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                  __REMB2   0x000001       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB5   0x000002       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                  __REMB1   0x000002       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                  __REMB0   0x000003       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB4   0x000003       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB3   0x000004       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB2   0x000005       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB1   0x000006       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __AARGB0   0x000007       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                   __AEXP   0x000008       data     extern C:\MCC18\src\traditional\math\aarg.asm
+                 __BARGB3   0x000009       data     extern C:\MCC18\src\traditional\math\barg.asm
+                 __BARGB2   0x00000a       data     extern C:\MCC18\src\traditional\math\barg.asm
+                 __BARGB1   0x00000b       data     extern C:\MCC18\src\traditional\math\barg.asm
+                 __BARGB0   0x00000c       data     extern C:\MCC18\src\traditional\math\barg.asm
+                   __BEXP   0x00000d       data     extern C:\MCC18\src\traditional\math\barg.asm
+                     SIGN   0x00000e       data     extern C:\MCC18\src\traditional\math\cmath18.asm
+            __FPFLAGSbits   0x00000f       data     extern C:\MCC18\src\traditional\math\cmath18.asm
+                __FPFLAGS   0x00000f       data     extern C:\MCC18\src\traditional\math\cmath18.asm
+                 __TEMPB3   0x000010       data     extern C:\MCC18\src\traditional\math\temparg.asm
+                 __TEMPB2   0x000011       data     extern C:\MCC18\src\traditional\math\temparg.asm
+                 __TEMPB1   0x000012       data     extern C:\MCC18\src\traditional\math\temparg.asm
+                 __TEMPB0   0x000013       data     extern C:\MCC18\src\traditional\math\temparg.asm
+                   __TEMP   0x000013       data     extern C:\MCC18\src\traditional\math\temparg.asm
+                  __tmp_0   0x000014       data     static C:\MPZBee\ZigbeeStack\zAPS.c
+                  __tmp_0   0x000014       data     static C:\MPZBee\ZigbeeStack\zZDO.C
+                  __tmp_0   0x000014       data     static C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                  __tmp_0   0x000014       data     static C:\MPZBee\ZigbeeStack\zNVM.c
+                  __tmp_0   0x000014       data     static C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                  __tmp_0   0x000014       data     static C:\MPZBee\ZigbeeStack\zNWK.c
+                  __tmp_0   0x000014       data     static C:\MpZBee\DemoRFD\RFD.c  
+                  __tmp_0   0x000014       data     static C:\MPZBee\Common\sralloc.c
+                  __tmp_0   0x000014       data     static C:\MPZBee\Common\Console.c
+                  __tmp_1   0x000020       data     static C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+     associationReqParams   0x000080       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+            currentPacket   0x000083       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+       macIndirectBuffers   0x000091       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                   macPIB   0x00009b       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+                macStatus   0x0000b5       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+          macTasksPending   0x0000b6       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+               scanParams   0x0000b7       data     extern C:\MPZBee\ZigbeeStack\zMAC_MRF24J40.c
+    currentNeighborRecord   0x0000d3       data     extern C:\MPZBee\ZigbeeStack\zNVM.c
+ currentNeighborTableInfo   0x0000e4       data     extern C:\MPZBee\ZigbeeStack\zNVM.c
+   pCurrentNeighborRecord   0x0000e8       data     extern C:\MPZBee\ZigbeeStack\zNVM.c
+        currentAPSAddress   0x0000ea       data     extern C:\MPZBee\ZigbeeStack\zNVM.c
+                     prom   0x0000f4       data     static C:\MCC18\src\traditional\startup\c018i.c
+                curr_byte   0x0000f7       data     static C:\MCC18\src\traditional\startup\c018i.c
+               curr_entry   0x0000f9       data     static C:\MCC18\src\traditional\startup\c018i.c
+                 data_ptr   0x0000fb       data     static C:\MCC18\src\traditional\startup\c018i.c
+           sequenceNumber   0x0000fe       data     extern C:\MPZBee\ZigbeeStack\zZDO.C
+                zdoStatus   0x0000ff       data     extern C:\MPZBee\ZigbeeStack\zZDO.C
+            _uDynamicHeap   0x000100       data     extern C:\MPZBee\Common\sralloc.c
+                 RxBuffer   0x000a00       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                 TxBuffer   0x000e00       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+          CurrentRxPacket   0x000e80       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                   params   0x000e82       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                   RxRead   0x000ea4       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                  RxWrite   0x000ea5       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                   TxData   0x000ea6       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+                 TxHeader   0x000ea7       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+             ZigBeeStatus   0x000ea8       data     extern C:\MPZBee\ZigbeeStack\ZigbeeTasks.c
+               aplTransId   0x000eaa       data     extern C:\MPZBee\ZigbeeStack\zAPS.c
+                apsStatus   0x000eab       data     extern C:\MPZBee\ZigbeeStack\zAPS.c
+   apsConfirmationHandles   0x000ec1       data     extern C:\MPZBee\ZigbeeStack\zAPS.c
+   nwkConfirmationHandles   0x000ec9       data     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                      NIB   0x000ed9       data     extern C:\MPZBee\ZigbeeStack\zNWK.c
+                nwkStatus   0x000eda       data     extern C:\MPZBee\ZigbeeStack\zNWK.c
+            myStatusFlags   0x000ee7       data     static C:\MpZBee\DemoRFD\RFD.c  
+ currentNetworkDescriptor   0x000ee8       data     extern C:\MpZBee\DemoRFD\RFD.c  
+         currentPrimitive   0x000eea       data     extern C:\MpZBee\DemoRFD\RFD.c  
+       destinationAddress   0x000eeb       data     extern C:\MpZBee\DemoRFD\RFD.c  
+        NetworkDescriptor   0x000eed       data     extern C:\MpZBee\DemoRFD\RFD.c  
+              orphanTries   0x000eef       data     extern C:\MpZBee\DemoRFD\RFD.c  
+          timerExtension1   0x000ef0       data     extern C:\MPZBee\ZigbeeStack\SymbolTime.c
+          timerExtension2   0x000ef1       data     extern C:\MPZBee\ZigbeeStack\SymbolTime.c
+                     flag   0x000ef2       data     extern C:\MPZBee\ZigbeeStack\zNVM.c
+              GIEH_backup   0x000f00       data     static C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                IntStatus   0x000f01       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+   pendingAckFrameControl   0x000f02       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                 phyError   0x000f04       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                   phyPIB   0x000f05       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+          PHYTasksPending   0x000f0a       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                   RxData   0x000f0b       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+          TRXCurrentState   0x000f0c       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                   TxStat   0x000f0d       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                savedBits   0x000f0e       data     extern C:\MPZBee\ZigbeeStack\zPHY_MRF24J40.c
+                    PORTA   0x000f80       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                PORTAbits   0x000f80       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PORTB   0x000f81       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                PORTBbits   0x000f81       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PORTC   0x000f82       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                PORTCbits   0x000f82       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PORTD   0x000f83       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                PORTDbits   0x000f83       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PORTE   0x000f84       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                PORTEbits   0x000f84       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     LATA   0x000f89       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 LATAbits   0x000f89       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     LATB   0x000f8a       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 LATBbits   0x000f8a       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     LATC   0x000f8b       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 LATCbits   0x000f8b       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     LATD   0x000f8c       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 LATDbits   0x000f8c       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     LATE   0x000f8d       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 LATEbits   0x000f8d       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 DDRAbits   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     DDRA   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                TRISAbits   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TRISA   0x000f92       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     DDRB   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                TRISBbits   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TRISB   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 DDRBbits   0x000f93       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 DDRCbits   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                TRISCbits   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     DDRC   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TRISC   0x000f94       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TRISD   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                TRISDbits   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 DDRDbits   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     DDRD   0x000f95       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 DDREbits   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     DDRE   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                TRISEbits   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TRISE   0x000f96       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              OSCTUNEbits   0x000f9b       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  OSCTUNE   0x000f9b       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 PIE1bits   0x000f9d       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     PIE1   0x000f9d       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     PIR1   0x000f9e       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 PIR1bits   0x000f9e       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     IPR1   0x000f9f       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 IPR1bits   0x000f9f       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     PIE2   0x000fa0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 PIE2bits   0x000fa0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     PIR2   0x000fa1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 PIR2bits   0x000fa1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 IPR2bits   0x000fa2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     IPR2   0x000fa2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               EECON1bits   0x000fa6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   EECON1   0x000fa6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   EECON2   0x000fa7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   EEDATA   0x000fa8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    EEADR   0x000fa9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   EEADRH   0x000faa       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    RCSTA   0x000fab       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                RCSTAbits   0x000fab       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TXSTA   0x000fac       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                TXSTAbits   0x000fac       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TXREG   0x000fad       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    RCREG   0x000fae       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    SPBRG   0x000faf       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   SPBRGH   0x000fb0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                T3CONbits   0x000fb1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    T3CON   0x000fb1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TMR3L   0x000fb2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TMR3H   0x000fb3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                CMCONbits   0x000fb4       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    CMCON   0x000fb4       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               CVRCONbits   0x000fb5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   CVRCON   0x000fb5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  ECCP1AS   0x000fb6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              ECCP1ASbits   0x000fb6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              PWM1CONbits   0x000fb7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  PWM1CON   0x000fb7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              BAUDCTLbits   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  BAUDCTL   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              BAUDCONbits   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  BAUDCON   0x000fb8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  CCP2CON   0x000fba       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              CCP2CONbits   0x000fba       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    CCPR2   0x000fbb       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   CCPR2L   0x000fbb       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   CCPR2H   0x000fbc       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  CCP1CON   0x000fbd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              CCP1CONbits   0x000fbd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    CCPR1   0x000fbe       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   CCPR1L   0x000fbe       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   CCPR1H   0x000fbf       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               ADCON2bits   0x000fc0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   ADCON2   0x000fc0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               ADCON1bits   0x000fc1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   ADCON1   0x000fc1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               ADCON0bits   0x000fc2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   ADCON0   0x000fc2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   ADRESL   0x000fc3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    ADRES   0x000fc3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   ADRESH   0x000fc4       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              SSPCON2bits   0x000fc5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  SSPCON2   0x000fc5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              SSPCON1bits   0x000fc6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  SSPCON1   0x000fc6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  SSPSTAT   0x000fc7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              SSPSTATbits   0x000fc7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   SSPADD   0x000fc8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   SSPBUF   0x000fc9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    T2CON   0x000fca       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                T2CONbits   0x000fca       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                      PR2   0x000fcb       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     TMR2   0x000fcc       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    T1CON   0x000fcd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                T1CONbits   0x000fcd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TMR1L   0x000fce       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TMR1H   0x000fcf       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     RCON   0x000fd0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 RCONbits   0x000fd0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               WDTCONbits   0x000fd1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   WDTCON   0x000fd1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              HLVDCONbits   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  HLVDCON   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   LVDCON   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               LVDCONbits   0x000fd2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   OSCCON   0x000fd3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               OSCCONbits   0x000fd3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    DEBUG   0x000fd4       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                T0CONbits   0x000fd5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    T0CON   0x000fd5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TMR0L   0x000fd6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    TMR0H   0x000fd7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   STATUS   0x000fd8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               STATUSbits   0x000fd8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     FSR2   0x000fd9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    FSR2L   0x000fd9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    FSR2H   0x000fda       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   PLUSW2   0x000fdb       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  PREINC2   0x000fdc       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 POSTDEC2   0x000fdd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 POSTINC2   0x000fde       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    INDF2   0x000fdf       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                      BSR   0x000fe0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     FSR1   0x000fe1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    FSR1L   0x000fe1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    FSR1H   0x000fe2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   PLUSW1   0x000fe3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  PREINC1   0x000fe4       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 POSTDEC1   0x000fe5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 POSTINC1   0x000fe6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    INDF1   0x000fe7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                        W   0x000fe8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     WREG   0x000fe8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    FSR0L   0x000fe9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     FSR0   0x000fe9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    FSR0H   0x000fea       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   PLUSW0   0x000feb       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  PREINC0   0x000fec       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 POSTDEC0   0x000fed       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                 POSTINC0   0x000fee       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    INDF0   0x000fef       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              INTCON3bits   0x000ff0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  INTCON3   0x000ff0       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+              INTCON2bits   0x000ff1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  INTCON2   0x000ff1       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               INTCONbits   0x000ff2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   INTCON   0x000ff2       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PRODL   0x000ff3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     PROD   0x000ff3       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                    PRODH   0x000ff4       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   TABLAT   0x000ff5       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  TBLPTRL   0x000ff6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   TBLPTR   0x000ff6       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  TBLPTRH   0x000ff7       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                  TBLPTRU   0x000ff8       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                      PCL   0x000ff9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                       PC   0x000ff9       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   PCLATH   0x000ffa       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   PCLATU   0x000ffb       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+               STKPTRbits   0x000ffc       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                   STKPTR   0x000ffc       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     TOSL   0x000ffd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                      TOS   0x000ffd       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     TOSH   0x000ffe       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+                     TOSU   0x000fff       data     extern C:\MCC18\src\traditional\proc\p18F4620.asm
+
+
