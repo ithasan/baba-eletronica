@@ -177,7 +177,7 @@
 // Compilation Configuration
 //******************************************************************************
 
-#define USE_BINDINGS
+//#define USE_BINDINGS
 #define I_AM_LIGHT
 #define I_AM_SWITCH
 
@@ -272,6 +272,9 @@ void main(void)
     // If you are going to send data to a terminal, initialize the UART.
     ConsoleInit();
 
+	ConsolePutROMString( (ROM char *)"Universidade Paulista - UNIP\r\n" );
+	ConsolePutROMString( (ROM char *)"Daniel Gonçalves\r\n" );
+	ConsolePutROMString( (ROM char *)"Projeto: Baba Eletronica\r\n\r\n" );
     ConsolePutROMString( (ROM char *)"\r\n\r\n\r\n*************************************\r\n" );
     ConsolePutROMString( (ROM char *)"Microchip ZigBee(TM) Stack - v1.0-3.8\r\n\r\n" );
     ConsolePutROMString( (ROM char *)"ZigBee Coordinator\r\n\r\n" );
