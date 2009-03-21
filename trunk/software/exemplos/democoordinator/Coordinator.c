@@ -194,22 +194,24 @@
 #define BIND_SWITCH                 PORTBbits.RB5
 #define LIGHT_SWITCH                PORTBbits.RB4
 
-#if defined(__18F4620)
-	#define BIND_INDICATION             LATAbits.LATA0
-	#define MESSAGE_INDICATION          LATAbits.LATA1
-#else
-	#define BIND_INDICATION				LATDbits.LATD0
-	#define MESSAGE_INDICATION			LATDbits.LATD1
-#endif
+#define MOVE_SENSOR_LED             LATAbits.LATA0
+#define LEVEL_SENSOR_LED         	LATAbits.LATA1
 
 #define BIND_STATE_BOUND            0
 #define BIND_STATE_TOGGLE           1
 #define BIND_STATE_UNBOUND          1
 #define BIND_WAIT_DURATION          (5*ONE_SECOND)
 
+#define ON							1
+#define OFF							0
+
 #define LIGHT_OFF                   0x00
 #define LIGHT_ON                    0xFF
 #define LIGHT_TOGGLE                0xF0
+
+#define DELAY() {int i,j; for(i=0; i < 100; i++) for(j=0; j < 1000;j++);}
+
+#define BLINK_LED(led) { led = OFF; DELAY(); led = ON; DELAY(); led = OFF; }
 
 
 //******************************************************************************
@@ -249,21 +251,7 @@ static union
 //******************************************************************************
 
 void main(void)
-{
-    #if defined(__18F87J10)
-        NOP();
-        NOP();
-        NOP();
-        NOP();
-        NOP();
-        OSCTUNEbits.PLLEN = 1;
-        NOP();
-        NOP();
-        NOP();
-        NOP();
-        NOP();
-    #endif
-    
+{    
     CLRWDT();
     ENABLE_WDT();
 
@@ -278,20 +266,11 @@ void main(void)
     ConsolePutROMString( (ROM char *)"\r\n\r\n\r\n*************************************\r\n" );
     ConsolePutROMString( (ROM char *)"Microchip ZigBee(TM) Stack - v1.0-3.8\r\n\r\n" );
     ConsolePutROMString( (ROM char *)"ZigBee Coordinator\r\n\r\n" );
-    #if (RF_CHIP == MRF24J40)
-        ConsolePutROMString( (ROM char *)"Transceiver-MRF24J40\r\n\r\n" );
-    #elif (RF_CHIP==UZ2400)
-        ConsolePutROMString( (ROM char *)"Transceiver-UZ2400\r\n\r\n" );
-    #elif (RF_CHIP==CC2420)
-        ConsolePutROMString( (ROM char *)"Transceiver-CC2420\r\n\r\n" );
-    #else
-        ConsolePutROMString( (ROM char *)"Transceiver-Unknown\r\n\r\n" );
-    #endif
+    ConsolePutROMString( (ROM char *)"Transceiver-MRF24J40\r\n\r\n" );
 
     // Initialize the hardware - must be done before initializing ZigBee.
     HardwareInit();
     ConsolePutROMString( (ROM char *)"Hardware initialized\r\n" );
-
    
     // Initialize the ZigBee Stack.
     ZigBeeInit();
@@ -301,10 +280,6 @@ void main(void)
     {
         NWKClearNeighborTable();
         ConsolePutROMString( (ROM char *)"Neighbor table \r\n" ); 
-        #if defined (USE_EXTERNAL_NVM)
-//        ClearNVM( 0, 0x500 );
-//        ConsolePutROMString( (ROM char *)"Cleared NVM\r\n\r\n" );
-        #endif
     }
     
     // *************************************************************************
@@ -313,7 +288,7 @@ void main(void)
     myStatusFlags.Val = STATUS_FLAGS_INIT;
     destinationAddress.Val = 0x796F;    // Default to first RFD
 
-    BIND_INDICATION = !myStatusFlags.bits.bIsBound;
+    MOVE_SENSOR_LED = !myStatusFlags.bits.bIsBound;
     LATAbits.LATA4 = 0;
 
     // Enable interrupts to get everything going.
@@ -551,55 +526,7 @@ void main(void)
                                     {
 
                                         // ********************************************************
-                                        // Put a case here to handle each ZDO response that we requested.
-                                        // ********************************************************
-
-                                        #ifndef USE_BINDINGS
-                                        case NWK_ADDR_rsp:
-                                            if (APLGet() == SUCCESS)
-                                            {
-                                                ConsolePutROMString( (ROM char *)"Receiving NWK_ADDR_rsp.\r\n" );
-
-                                                // Skip over the IEEE address of the responder.
-                                                for (data=0; data<8; data++)
-                                                {
-                                                    APLGet();
-                                                    transByte++;
-                                                }
-                                                destinationAddress.byte.LSB = APLGet();
-                                                destinationAddress.byte.MSB = APLGet();
-                                                transByte += 2;
-                                                myStatusFlags.bits.bDestinationAddressKnown = 1;
-                                            }
-                                            break;
-                                        #endif
-
-                                        #ifdef USE_BINDINGS
-                                        case END_DEVICE_BIND_rsp:
-                                            switch( APLGet() )
-                                            {
-                                                case SUCCESS:
-                                                    ConsolePutROMString( (ROM char *)"End device bind/unbind successful!\r\n" );
-                                                    myStatusFlags.bits.bIsBound ^= 1;
-                                                    BIND_INDICATION = !myStatusFlags.bits.bIsBound;
-                                                    break;
-                                                case ZDO_NOT_SUPPORTED:
-                                                    ConsolePutROMString( (ROM char *)"End device bind/unbind not supported.\r\n" );
-                                                    break;
-                                                case END_DEVICE_BIND_TIMEOUT:
-                                                    ConsolePutROMString( (ROM char *)"End device bind/unbind time out.\r\n" );
-                                                    break;
-                                                case END_DEVICE_BIND_NO_MATCH:
-                                                    ConsolePutROMString( (ROM char *)"End device bind/unbind failed - no match.\r\n" );
-                                                    break;
-                                                default:
-                                                    ConsolePutROMString( (ROM char *)"End device bind/unbind invalid response.\r\n" );
-                                                    break;
-                                            }
-                                            myStatusFlags.bits.bTryingToBind = 0;
-                                            break;
-                                        #endif
-
+                                        // Put a case here to handle each ZDO response that we requested. 
                                         default:
                                             break;
                                     }
@@ -631,6 +558,27 @@ void main(void)
                                     //dataType = command & APL_FRAME_DATA_TYPE_MASK;
                                     command &= APL_FRAME_COMMAND_MASK;
 
+									if(params.APSDE_DATA_indication.ClusterId == BabyControl_CLUSTER)
+									{
+										if(command == APL_FRAME_COMMAND_SET || command == APL_FRAME_COMMAND_SETACK)
+										{
+											switch(attributeId.Val)
+											{
+												case LevelSensor_Activated:
+													{
+														BLINK_LED(LEVEL_SENSOR_LED);
+														ConsolePutROMString((ROM char *) "A crianca levantou!!\r\n");
+													}break;
+												case MoveSensor_Activated:
+													{
+														BLINK_LED(MOVE_SENSOR_LED)
+														ConsolePutROMString((ROM char *) "A crianca se mexeu!!\r\n");
+													}break;
+											}//switch
+										}// if
+									}// if
+
+									/*
                                     if ((params.APSDE_DATA_indication.ClusterId == OnOffSRC_CLUSTER) &&
                                         (attributeId.Val == OnOffSRC_OnOff))
                                     {
@@ -650,17 +598,17 @@ void main(void)
                                             {
                                                 case LIGHT_OFF:
                                                     ConsolePutROMString( (ROM char *)"Turning light off.\r\n" );
-                                                    MESSAGE_INDICATION = 0;
+                                                    LEVEL_SENSOR_LED = 0;
                                                     TxBuffer[TxData++] = SUCCESS;
                                                     break;
                                                 case LIGHT_ON:
                                                     ConsolePutROMString( (ROM char *)"Turning light on.\r\n" );
-                                                    MESSAGE_INDICATION = 1;
+                                                    LEVEL_SENSOR_LED = 1;
                                                     TxBuffer[TxData++] = SUCCESS;
                                                     break;
                                                 case LIGHT_TOGGLE:
                                                     ConsolePutROMString( (ROM char *)"Toggling light.\r\n" );
-                                                    MESSAGE_INDICATION ^= 1;
+                                                    LEVEL_SENSOR_LED ^= 1;
                                                     TxBuffer[TxData++] = SUCCESS;
                                                     break;
                                                 default:
@@ -700,7 +648,7 @@ void main(void)
                                             // We are not sending an acknowledge, so reset the transmit message pointer.
                                             TxData = TX_DATA_START;
                                         }
-                                    }
+                                    }*/
                                     // TODO read to the end of the transaction.
                                 } // each transaction
                             } // frame type
