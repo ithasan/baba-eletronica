@@ -134,9 +134,7 @@
                                                         // XINST disabled
                                                         // LVP disabled
                                                         // STVREN enabled
-
     #pragma romdata
-
 #elif defined(HITECH_C18) && defined(_18F4620)
     // Set configuration fuses for HITECH compiler.
     __CONFIG(1, 0x0600);    // HSPLL oscillator
@@ -149,37 +147,32 @@
 #endif
 
 //******************************************************************************
-// Compilation Configuration
-//******************************************************************************
-
-#define USE_BINDINGS
-#define I_AM_LIGHT
-#define I_AM_SWITCH
-
-//******************************************************************************
 // Constants
 //******************************************************************************
 
 // Switches and LEDs locations.
-#define BROADCAST_SWITCH            PORTBbits.RB5
-#define LIGHT_SWITCH                PORTBbits.RB4
+#define LEVEL_SENSOR            PORTBbits.RB5	// botão utilizado para simular o sensor de nível
+#define MOVE_SENSOR             PORTBbits.RB4	// botão utilizado para simular o sensor de movimento
 
-#if defined(__18F4620)
-	#define BIND_INDICATION             LATAbits.LATA0
-	#define MESSAGE_INDICATION          LATAbits.LATA1
-#else
-	#define BIND_INDICATION				LATDbits.LATD0
-	#define MESSAGE_INDICATION			LATDbits.LATD1
-#endif
+
+#define MOVE_SENSOR_LED         LATAbits.LATA0	// led ligado no RA0
+#define LEVEL_SENSOR_LED        LATAbits.LATA1	// led ligado no RA1
 
 #define BIND_STATE_BOUND            0
 #define BIND_STATE_TOGGLE           1
 #define BIND_STATE_UNBOUND          1
 #define BIND_WAIT_DURATION          (6*ONE_SECOND)
 
+#define ON							1
+#define OFF							0
+
 #define LIGHT_OFF                   0x00
 #define LIGHT_ON                    0xFF
 #define LIGHT_TOGGLE                0xF0
+
+#define DELAY() {int i,j; for(i=0; i < 100; i++) for(j=0; j < 1000;j++);}
+
+#define BLINK_LED(led) { led = OFF; DELAY(); led = ON; DELAY(); led = OFF; }
 
 
 //******************************************************************************
@@ -190,11 +183,10 @@ static union
 {
     struct
     {
-        BYTE    bBroadcastSwitchToggled    : 1;
-        BYTE    bLightSwitchToggled        : 1;
-        BYTE    bTryingToBind              : 1;
-        BYTE    bIsBound                   : 1;
-        BYTE    bDestinationAddressKnown   : 1;
+        BYTE    bLevelSensorButtonPressed    : 1;
+        BYTE    bMoveSensorButtonPressed     : 1;
+        BYTE    bTryingToBind              	 : 1;
+        BYTE    bDestinationAddressKnown     : 1;
     } bits;
     BYTE Val;
 } myStatusFlags;
@@ -212,8 +204,10 @@ BYTE                orphanTries;
 // Function Prototypes
 //******************************************************************************
 
+void TransceiverInit(void);
 void HardwareInit( void );
 BOOL myProcessesAreDone( void );
+void RFDSendMessage(unsigned short attributeID, unsigned char value);
 
 //******************************************************************************
 //******************************************************************************
@@ -223,20 +217,6 @@ BOOL myProcessesAreDone( void );
 
 void main(void)
 {
-	#if defined(__18F87J10)
-        NOP();
-        NOP();
-        NOP();
-        NOP();
-        NOP();
-        OSCTUNEbits.PLLEN = 1;
-        NOP();
-        NOP();
-        NOP();
-        NOP();
-        NOP();
-    #endif	
-
     CLRWDT();
     ENABLE_WDT();
 
@@ -253,35 +233,28 @@ void main(void)
     ConsolePutROMString( (ROM char *)"\r\n\r\n\r\n*************************************\r\n" );
     ConsolePutROMString( (ROM char *)"Microchip ZigBee(TM) Stack - v1.0-3.8\r\n\r\n" );
     ConsolePutROMString( (ROM char *)"ZigBee RFD\r\n\r\n" );
-    #if (RF_CHIP == MRF24J40)
-        ConsolePutROMString( (ROM char *)"Transceiver-MRF24J40\r\n\r\n" );
-    #elif (RF_CHIP==UZ2400)
-        ConsolePutROMString( (ROM char *)"Transceiver-UZ2400\r\n\r\n" );
-    #elif (RF_CHIP==CC2420)
-        ConsolePutROMString( (ROM char *)"Transceiver-CC2420\r\n\r\n" );
-    #else
-        ConsolePutROMString( (ROM char *)"Transceiver-Unknown\r\n\r\n" );
-    #endif
+    ConsolePutROMString( (ROM char *)"Transceiver-MRF24J40\r\n\r\n" );
 
-    // Initialize the hardware - must be done before initializing ZigBee.
+    // Inicializa o Hardware
     HardwareInit();
 
-    // Initialize the ZigBee Stack.
+    // Inicializa a pilha ZigBee
     ZigBeeInit();
+
     // *************************************************************************
-    // Perform any other initialization here
+    // Outras Inicializações
     // *************************************************************************
 
     myStatusFlags.Val = STATUS_FLAGS_INIT;
 
-    // Default the destination address to the ZigBee Coordinator
+    // Endereço padrão do Coordenador
     destinationAddress.Val = 0x0000;
 
-    // Initialize the LED's.
-    BIND_INDICATION = !myStatusFlags.bits.bIsBound;
-    MESSAGE_INDICATION = 0;
+    // Inicializa os LEDS
+    MOVE_SENSOR_LED = ON;
+    LEVEL_SENSOR_LED = ON;
 
-    // Enable interrupts to get everything going.
+    // Habilita as interrupções 
     RCONbits.IPEN = 1;
     INTCONbits.GIEH = 1;
 
@@ -487,33 +460,6 @@ SubmitJoinRequest:
                                                 myStatusFlags.bits.bDestinationAddressKnown = 1;
                                             }
                                             break;
-
-                                        #ifdef USE_BINDINGS
-                                        case END_DEVICE_BIND_rsp:
-                                            switch( APLGet() )
-                                            {
-                                                case SUCCESS:
-                                                    ConsolePutROMString( (ROM char *)" End device bind/unbind successful!\r\n" );
-                                                    myStatusFlags.bits.bIsBound ^= TOGGLE_BOUND_FLAG;
-                                                    BIND_INDICATION = !myStatusFlags.bits.bIsBound;
-                                                    break;
-                                                case ZDO_NOT_SUPPORTED:
-                                                    ConsolePutROMString( (ROM char *)" End device bind/unbind not supported.\r\n" );
-                                                    break;
-                                                case END_DEVICE_BIND_TIMEOUT:
-                                                    ConsolePutROMString( (ROM char *)" End device bind/unbind time out.\r\n" );
-                                                    break;
-                                                case END_DEVICE_BIND_NO_MATCH:
-                                                    ConsolePutROMString( (ROM char *)" End device bind/unbind failed - no match.\r\n" );
-                                                    break;
-                                                default:
-                                                    ConsolePutROMString( (ROM char *)" End device bind/unbind invalid response.\r\n" );
-                                                    break;
-                                            }
-                                            myStatusFlags.bits.bTryingToBind = 0;
-                                            break;
-                                        #endif
-
                                         default:
                                             break;
                                     }
@@ -563,17 +509,17 @@ SubmitJoinRequest:
                                             {
                                                 case LIGHT_OFF:
                                                     ConsolePutROMString( (ROM char *)" Turning light off.\r\n" );
-                                                    MESSAGE_INDICATION = 0;
+                                                    LEVEL_SENSOR_LED = 0;
                                                     TxBuffer[TxData++] = SUCCESS;
                                                     break;
                                                 case LIGHT_ON:
                                                     ConsolePutROMString( (ROM char *)" Turning light on.\r\n" );
-                                                    MESSAGE_INDICATION = 1;
+                                                    LEVEL_SENSOR_LED = 1;
                                                     TxBuffer[TxData++] = SUCCESS;
                                                     break;
                                                 case LIGHT_TOGGLE:
                                                     ConsolePutROMString( (ROM char *)" Toggling light.\r\n" );
-                                                    MESSAGE_INDICATION ^= 1;
+                                                    LEVEL_SENSOR_LED ^= 1;
                                                     TxBuffer[TxData++] = SUCCESS;
                                                     break;
                                                 default:
@@ -678,151 +624,26 @@ SubmitJoinRequest:
                         // Place all processes that can send messages here.  Be sure to call
                         // ZigBeeBlockTx() when currentPrimitive is set to APSDE_DATA_request.
                         // ************************************************************************
-                        if ( myStatusFlags.bits.bLightSwitchToggled )
+                        if ( myStatusFlags.bits.bMoveSensorButtonPressed)
                         {
                             // Send a light toggle message to the other node.
-                            myStatusFlags.bits.bLightSwitchToggled = FALSE;
-                            ZigBeeBlockTx();
+                            myStatusFlags.bits.bMoveSensorButtonPressed = FALSE;
 
-                            TxBuffer[TxData++] = APL_FRAME_TYPE_KVP | 1;    // KVP, 1 transaction
-                            TxBuffer[TxData++] = APLGetTransId();
-                            TxBuffer[TxData++] = APL_FRAME_COMMAND_SET | (APL_FRAME_DATA_TYPE_UINT8 << 4);
-                            TxBuffer[TxData++] = OnOffSRC_OnOff & 0xFF;         // Attribute ID LSB
-                            TxBuffer[TxData++] = (OnOffSRC_OnOff >> 8) & 0xFF;  // Attribute ID MSB
-                            TxBuffer[TxData++] = LIGHT_TOGGLE;
+							BLINK_LED(MOVE_SENSOR_LED);							
 
-                            #ifdef USE_BINDINGS
-                                params.APSDE_DATA_request.DstAddrMode = APS_ADDRESS_NOT_PRESENT;
-                            #else
-                                params.APSDE_DATA_request.DstAddrMode = APS_ADDRESS_16_BIT;
-                                params.APSDE_DATA_request.DstEndpoint = EP_LIGHT;
-                                params.APSDE_DATA_request.DstAddress.ShortAddr = destinationAddress;
-                            #endif
-
-                            //params.APSDE_DATA_request.asduLength; TxData
-                            params.APSDE_DATA_request.ProfileId.Val = MY_PROFILE_ID;
-                            params.APSDE_DATA_request.RadiusCounter = DEFAULT_RADIUS;
-                            params.APSDE_DATA_request.DiscoverRoute = ROUTE_DISCOVERY_ENABLE;
-							#ifdef I_SUPPORT_SECURITY
-								params.APSDE_DATA_request.TxOptions.Val = 1;
-							#else                            
-                            	params.APSDE_DATA_request.TxOptions.Val = 0;
-							#endif                            
-                            params.APSDE_DATA_request.SrcEndpoint = EP_LIGHT;
-                            params.APSDE_DATA_request.ClusterId = OnOffSRC_CLUSTER;
-
-                            ConsolePutROMString( (ROM char *)" Trying to send light switch message.\r\n" );
-
-                            currentPrimitive = APSDE_DATA_request;
+							// envia a mensagem para ligar/desligar o led
+							RFDSendMessage(MoveSensor_Activated, 0x00);                
                         }
-                        else
-                        
-                        #ifdef USE_BINDINGS
-                            if (myStatusFlags.bits.bBroadcastSwitchToggled)
-                            {
-                                // Send END_DEVICE_BIND_req
+                        else if (myStatusFlags.bits.bLevelSensorButtonPressed)
+                        {
+                        	// Envia mensagem indicando que o sensor de nível foi acionado
 
-                                myStatusFlags.bits.bBroadcastSwitchToggled = FALSE;
-                                ZigBeeBlockTx();
+                            myStatusFlags.bits.bLevelSensorButtonPressed = FALSE;
 
-                                TxBuffer[TxData++] = APL_FRAME_TYPE_MSG | 1;    // KVP, 1 transaction
-                                TxBuffer[TxData++] = APLGetTransId();
-                                #if defined(I_AM_LIGHT) && defined(I_AM_SWITCH)
-                                    TxBuffer[TxData++] = 9; // Transaction Length
-                                #else
-                                    TxBuffer[TxData++] = 8; // Transaction Length
-                                #endif
+							BLINK_LED(LEVEL_SENSOR_LED);
 
-                                // Binding Target
-                                TxBuffer[TxData++] = 0x00;      // Binding Target
-                                TxBuffer[TxData++] = 0x00;
-                                TxBuffer[TxData++] = EP_LIGHT;
-                                TxBuffer[TxData++] = MY_PROFILE_ID_LSB;
-                                TxBuffer[TxData++] = MY_PROFILE_ID_MSB;
-
-                                #ifdef I_AM_LIGHT
-                                    TxBuffer[TxData++] = 1;     // Input clusters
-                                    TxBuffer[TxData++] = OnOffSRC_CLUSTER;
-                                #else
-                                    TxBuffer[TxData++] = 0;
-                                #endif
-
-                                #ifdef I_AM_SWITCH
-                                    TxBuffer[TxData++] = 1;     // Output clusters
-                                    TxBuffer[TxData++] = OnOffSRC_CLUSTER;
-                                #else
-                                    TxBuffer[TxData++] = 0;
-                                #endif
-
-                                params.APSDE_DATA_request.DstAddrMode = APS_ADDRESS_16_BIT;
-                                params.APSDE_DATA_request.DstEndpoint = EP_ZDO;
-                                params.APSDE_DATA_request.DstAddress.ShortAddr.Val = 0x0000;
-
-                                //params.APSDE_DATA_request.asduLength; TxData
-                                params.APSDE_DATA_request.ProfileId.Val = ZDO_PROFILE_ID;
-                                params.APSDE_DATA_request.RadiusCounter = DEFAULT_RADIUS;
-                                params.APSDE_DATA_request.DiscoverRoute = ROUTE_DISCOVERY_ENABLE;
-								#ifdef I_SUPPORT_SECURITY
-									params.APSDE_DATA_request.TxOptions.Val = 1;
-								#else								                                
-                                	params.APSDE_DATA_request.TxOptions.Val = 0;
-								#endif                                
-                                params.APSDE_DATA_request.SrcEndpoint = EP_ZDO;
-                                params.APSDE_DATA_request.ClusterId = END_DEVICE_BIND_req;
-
-                                ConsolePutROMString( (ROM char *)" Trying to send END_DEVICE_BIND_req.\r\n" );
-
-                                currentPrimitive = APSDE_DATA_request;
-                            }
-                        #else
-                            if (myStatusFlags.bits.bBroadcastSwitchToggled)
-                            {
-                                // Send NWK_ADDR_req
-
-                                myStatusFlags.bits.bBroadcastSwitchToggled = FALSE;
-                                ZigBeeBlockTx();
-
-                                TxBuffer[TxData++] = APL_FRAME_TYPE_MSG | 1;    // KVP, 1 transaction
-                                TxBuffer[TxData++] = APLGetTransId();
-                                TxBuffer[TxData++] = 10; // Transaction Length
-
-                                // IEEEAddr of the node we want to find.  !!!Must match our other PICDEM Z!!!
-                                TxBuffer[TxData++] = 0x54;
-                                TxBuffer[TxData++] = 0x00;
-                                TxBuffer[TxData++] = 0x00;
-                                TxBuffer[TxData++] = 0x00;
-                                TxBuffer[TxData++] = 0x00;
-                                TxBuffer[TxData++] = 0xa3;
-                                TxBuffer[TxData++] = 0x04;
-                                TxBuffer[TxData++] = 0x00;
-
-                                // RequestType
-                                TxBuffer[TxData++] = 0x00;
-
-                                // StartIndex
-                                TxBuffer[TxData++] = 0x00;
-
-                                params.APSDE_DATA_request.DstAddrMode = APS_ADDRESS_16_BIT;
-                                params.APSDE_DATA_request.DstEndpoint = EP_ZDO;
-                                params.APSDE_DATA_request.DstAddress.ShortAddr.Val = 0xFFFF;
-
-                                //params.APSDE_DATA_request.asduLength; TxData
-                                params.APSDE_DATA_request.ProfileId.Val = ZDO_PROFILE_ID;
-                                params.APSDE_DATA_request.RadiusCounter = DEFAULT_RADIUS;
-                                params.APSDE_DATA_request.DiscoverRoute = ROUTE_DISCOVERY_ENABLE;
-								#ifdef I_SUPPORT_SECURITY
-									params.APSDE_DATA_request.TxOptions.Val = 1;
-								#else								                                
-                                	params.APSDE_DATA_request.TxOptions.Val = 0;
-								#endif                                
-                                params.APSDE_DATA_request.SrcEndpoint = EP_ZDO;
-                                params.APSDE_DATA_request.ClusterId = NWK_ADDR_req;
-
-                                ConsolePutROMString( (ROM char *)" Trying to send NWK_ADDR_req.\r\n" );
-
-                                currentPrimitive = APSDE_DATA_request;
-                            }
-                        #endif
+							RFDSendMessage(LevelSensor_Activated, 0x00);                                
+                        }
 
                         // We've processed any key press, so re-enable interrupts.
                         INTCONbits.RBIE = 1;
@@ -903,7 +724,7 @@ should return FALSE.
 
 BOOL myProcessesAreDone( void )
 {
-    return (myStatusFlags.bits.bBroadcastSwitchToggled==FALSE) && (myStatusFlags.bits.bLightSwitchToggled==FALSE);
+    return (myStatusFlags.bits.bLevelSensorButtonPressed==FALSE) && (myStatusFlags.bits.bMoveSensorButtonPressed==FALSE);
 }
 
 /*******************************************************************************
@@ -933,52 +754,8 @@ void HardwareInit(void)
         SPIInit();
     #endif
 
-    #if (RF_CHIP == MRF24J40)
-        // Start with MRF24J40 disabled and not selected
-        PHY_CS              = 1;
-        PHY_RESETn          = 1;
-
-        // Set the directioning for the MRF24J40 pin connections.
-        PHY_CS_TRIS         = 0;
-        PHY_RESETn_TRIS     = 0;
-
-        // Initialize the interrupt.
-        INTCON2bits.INTEDG0 = 0;
-    #elif (RF_CHIP==UZ2400)
-        // Start with UZ2400 disabled and not selected
-        PHY_SEN             = 1;
-        PHY_RESETn          = 1;
-
-        // Set the directioning for the UZ2400 pin connections.
-        PHY_SEN_TRIS        = 0;
-        PHY_RESETn_TRIS     = 0;
-
-        // Initialize the interrupt.
-        INTCON2bits.INTEDG0 = 0;
-    #elif (RF_CHIP==CC2420)
-        // CC2420 I/O assignments with respect to PIC:
-        //NOTE: User must make sure that pin is capable of correct digital operation.
-        //      This may require modificaiton of which pins are digital and analog.
-        //NOTE: The stack requires that the SPI interface be located on LATC3 (SCK),
-        //      RC4 (SO), and LATC5 (SI).
-        //NOTE: The appropriate config bit must be set such that FIFOP is the CCP2
-        //      input pin. The stack uses the CCP2 interrupt.
-
-        // Start with CC2420 disabled and not selected
-        PHY_CSn             = 1;
-        PHY_VREG_EN         = 0;
-        PHY_RESETn          = 1;
-
-        // Set the directioning for the CC2420 pin connections.
-        PHY_FIFO_TRIS       = 1;    // FIFO      (Input)
-        PHY_SFD_TRIS        = 1;    // SFD       (Input - Generates interrupt on falling edge)
-        PHY_FIFOP_TRIS      = 1;    // FIFOP     (Input - Used to detect overflow, CCP2 interrupt)
-        PHY_CSn_TRIS        = 0;    // CSn       (Output - to select CC2420 SPI slave)
-        PHY_VREG_EN_TRIS    = 0;    // VREG_EN   (Output - to enable CC2420 voltage regulator)
-        PHY_RESETn_TRIS     = 0;    // RESETn    (Output - to reset CC2420)
-    #else
-        #error Unknown transceiver selected
-    #endif
+	// Inicializa o Transceiver
+    TransceiverInit();
 
     #if defined(USE_EXTERNAL_NVM) && !defined(EE_AND_RF_SHARE_SPI)
         // Initialize the SPI1 pins and directions
@@ -1016,17 +793,15 @@ void HardwareInit(void)
     // initialization.
     //-------------------------------------------------------------------------
 
-    #if defined (__18F4620)
-        // D1 and D2 are on RA0 and RA1 respectively, and CS of the TC77 is on RA2.
-        // Make PORTA digital I/O.
-        ADCON1 = 0x0F;
+    // D1 and D2 are on RA0 and RA1 respectively, and CS of the TC77 is on RA2.
+    // Make PORTA digital I/O.
+    ADCON1 = 0x0F;
     
-        // Deselect the TC77 temperature sensor (RA2)
-        LATA = 0x04;
+    // Deselect the TC77 temperature sensor (RA2)
+    LATA = 0x04;
     
-        // Make RA0, RA1, RA2 and RA4 outputs.
-        TRISA = 0xE0;
-    #endif
+    // Make RA0, RA1, RA2 and RA4 outputs.
+    TRISA = 0xE0;
 
     // Clear the RBIF flag (INTCONbits.RBIF)
     INTCONbits.RBIF = 0;
@@ -1035,14 +810,23 @@ void HardwareInit(void)
     INTCON2bits.RBPU = 0;
 
     // Make the PORTB switch connections inputs.
-    #if !defined(__18F4620)
-        TRISDbits.TRISD7 = 0;
-        TRISBbits.TRISB3 = 1;
-        TRISDbits.TRISD0 = 0;
-        TRISDbits.TRISD1 = 0;
-    #endif
+
     TRISBbits.TRISB4 = 1;
     TRISBbits.TRISB5 = 1;
+}
+
+void TransceiverInit()
+{
+	// Start with MRF24J40 disabled and not selected
+    PHY_CS              = 1;
+    PHY_RESETn          = 1;
+
+    // Set the directioning for the MRF24J40 pin connections.
+    PHY_CS_TRIS         = 0;
+    PHY_RESETn_TRIS     = 0;
+
+    // Initialize the interrupt.
+    INTCON2bits.INTEDG0 = 0;
 }
 
 /*******************************************************************************
@@ -1065,11 +849,17 @@ void UserInterruptHandler(void)
     {
         // Record which button was pressed so the main() loop can
         // handle it
-        if (BROADCAST_SWITCH == 0)
-            myStatusFlags.bits.bBroadcastSwitchToggled = TRUE;
+        if (LEVEL_SENSOR == 0)
+		{
+            myStatusFlags.bits.bLevelSensorButtonPressed = TRUE;
+			ConsolePutROMString( (ROM char *)"O botao LEVEL_SENSOR foi pressionado!\r\n" );
+		}
 
-        if (LIGHT_SWITCH == 0)
-            myStatusFlags.bits.bLightSwitchToggled = TRUE;
+        if (MOVE_SENSOR == 0)
+		{
+            myStatusFlags.bits.bMoveSensorButtonPressed = TRUE;
+			ConsolePutROMString( (ROM char *)"O botao MOVE_SENSOR foi pressionado!\r\n" );
+		}
 
         // Disable further RBIF until we process it
         INTCONbits.RBIE = 0;
@@ -1079,4 +869,39 @@ void UserInterruptHandler(void)
 
         INTCONbits.RBIF = 0;
     }
+}
+
+
+/* Função para Envio de uma mensagem */
+
+void RFDSendMessage(unsigned short attributeID, unsigned char value)
+{
+	// Send a light toggle message to the other node.
+    ZigBeeBlockTx();
+
+    TxBuffer[TxData++] = APL_FRAME_TYPE_KVP | 1;    // KVP, 1 transaction
+    TxBuffer[TxData++] = APLGetTransId();
+    TxBuffer[TxData++] = APL_FRAME_COMMAND_SET | (APL_FRAME_DATA_TYPE_UINT8 << 4);
+    TxBuffer[TxData++] = ATTR_ID_LSB(attributeID);	// Attribute ID LSB
+    TxBuffer[TxData++] = ATTR_ID_MSB(attributeID);  		// Attribute ID MSB
+    TxBuffer[TxData++] = value;
+
+    params.APSDE_DATA_request.DstAddrMode = APS_ADDRESS_16_BIT;
+    params.APSDE_DATA_request.DstEndpoint = EP_LIGHT;
+    params.APSDE_DATA_request.DstAddress.ShortAddr = destinationAddress;
+
+    //params.APSDE_DATA_request.asduLength; TxData
+    params.APSDE_DATA_request.ProfileId.Val = BABY_PROFILE_ID;
+    params.APSDE_DATA_request.RadiusCounter = DEFAULT_RADIUS;
+    params.APSDE_DATA_request.DiscoverRoute = ROUTE_DISCOVERY_ENABLE;
+						    
+	// Sem suporte a segurança                        
+    params.APSDE_DATA_request.TxOptions.Val = 0; 
+                          
+    params.APSDE_DATA_request.SrcEndpoint = EP_LIGHT;
+    params.APSDE_DATA_request.ClusterId = BabyControl_CLUSTER;
+
+    ConsolePutROMString( (ROM char *)" Trying to send light switch message.\r\n" );
+
+    currentPrimitive = APSDE_DATA_request;
 }
